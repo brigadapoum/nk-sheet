@@ -1,0 +1,69 @@
+/* Новое королевство — лист Жука */
+
+/* Прокрутка вкладки «Инвентарь» (раньше жила в Custom CSS) */
+.intotheodd.actor.character .window-content {
+  overflow: hidden;
+}
+.intotheodd.actor.character .window-content .tab.character-inventory.active {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Плашка нагрузки */
+.intotheodd.actor.character .nk-load {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 4px 0 8px;
+}
+.intotheodd.actor.character .nk-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.intotheodd.actor.character .nk-chip {
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 2px 6px;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+.intotheodd.actor.character .nk-chip.nk-bad {
+  color: #d9534f;
+  opacity: 1;
+  font-weight: bold;
+}
+.intotheodd.actor.character .nk-warn {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+/* Строки предметов */
+.intotheodd.actor.character .character-items-list .item[draggable="true"] summary {
+  cursor: grab;
+}
+.intotheodd.actor.character .character-items-list .item.nk-dragging {
+  opacity: 0.4;
+}
+.intotheodd.actor.character .nk-tag {
+  opacity: 0.8;
+}
+.intotheodd.actor.character .nk-tag-place {
+  font-style: italic;
+}
+.intotheodd.actor.character .nk-place-btn {
+  margin-right: 4px;
+}
+
+/* Лист предмета */
+.intotheodd.item.equipment .nk-item {
+  margin-top: 6px;
+}
+
+/* Чат */
+.nk-transfer .nk-chat-warn {
+  color: #d9534f;
+  font-weight: bold;
+}
