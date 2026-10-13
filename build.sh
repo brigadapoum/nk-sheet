@@ -5,6 +5,7 @@ set -e
 cd "$(dirname "$0")"
 V=$(python3 -c "import json;print(json.load(open('module.json'))['version'])")
 grep -q "dist/nk-sheet-$V.zip" module.json || { echo "download в module.json не указывает на nk-sheet-$V.zip"; exit 1; }
-mkdir -p dist && rm -f dist/*.zip
+mkdir -p dist && rm -f dist/nk-sheet-*.zip
 zip -qr "dist/nk-sheet-$V.zip" module.json scripts styles README.md
+cp "dist/nk-sheet-$V.zip" dist/module.zip  # для старых ссылок
 echo "dist/nk-sheet-$V.zip"
