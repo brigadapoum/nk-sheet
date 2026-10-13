@@ -4,7 +4,9 @@
   "description": "Доработки листа персонажа Into the Odd под правила кампании «Новое королевство»: передача предметов между листами, ячейки инвентаря, перегруз, громоздкость, карманцы и амулеты.",
   "version": "0.1.0",
   "authors": [
-    { "name": "brigadapoum" }
+    {
+      "name": "brigadapoum"
+    }
   ],
   "compatibility": {
     "minimum": "13",
@@ -16,14 +18,20 @@
       {
         "id": "intotheodd",
         "type": "system",
-        "compatibility": { "minimum": "3.1.0" }
+        "compatibility": {
+          "minimum": "3.1.0"
+        }
       }
     ]
   },
-  "esmodules": ["scripts/nk-sheet.mjs"],
-  "styles": ["styles/nk-sheet.css"],
+  "esmodules": [
+    "scripts/nk-sheet.mjs"
+  ],
+  "styles": [
+    "styles/nk-sheet.css"
+  ],
   "socket": true,
   "url": "https://github.com/brigadapoum/nk-sheet",
-  "manifest": "https://github.com/brigadapoum/nk-sheet/releases/latest/download/module.json",
-  "download": "https://github.com/brigadapoum/nk-sheet/releases/download/v0.1.0/module.zip"
+  "manifest": "https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/module.json",
+  "download": "https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/dist/module.zip"
 }

@@ -7,7 +7,7 @@
 Foundry → Add-on Modules → Install Module → поле **Manifest URL**:
 
 ```
-https://github.com/brigadapoum/nk-sheet/releases/latest/download/module.json
+https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/module.json
 ```
 
 На Sqyre: страница игры → Manage Game → Manage Modules → установка по manifest URL. Затем включить модуль в мире (Manage Modules внутри Foundry).
