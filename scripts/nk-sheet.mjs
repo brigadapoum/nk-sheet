@@ -19,10 +19,18 @@ const LEVELS = ["novice", "professional", "expert", "veteran", "master", "beyond
 
 const PLACES = {
   pack: { label: "в мешке", icon: "fa-solid fa-sack" },
+  worn: { label: "надета", icon: "fa-solid fa-shirt" },
   hands: { label: "в лапках", icon: "fa-solid fa-hand" },
   pocket: { label: "в карманце", icon: "fa-solid fa-bag-shopping" },
   neck: { label: "на шее", icon: "fa-solid fa-gem" },
 }
+
+/*
+ * Место заменяет системную кнопку «экипировать»:
+ *  броня  — «надета» = экипирована (занимает ячейки, считается в Броню);
+ *  оружие — «в лапках» или «в карманце» = экипировано (появляется бросок урона);
+ *  прочее — экипировка не используется.
+ */
 
 const POCKETS = 2
 const BULKY_LIMIT = 2
@@ -42,16 +50,47 @@ const isAmulet = (item) => !!flag(item, "amulet", false)
 const qtyOf = (item) => Math.max(Number(item.system?.quantity) || 0, 1)
 const slotsOf = (item) => Math.max(Number(flag(item, "slots", 1)) || 0, 0)
 
+const subTypeOf = (item) => item.system?.subType ?? "equipment"
+
+/** Какие места доступны предмету — в порядке переключения кнопкой */
+function placesFor(subType, amulet) {
+  if (subType === "armour") return ["pack", "worn"]
+  if (amulet) return ["pack", "hands", "pocket", "neck"]
+  return ["pack", "hands", "pocket"]
+}
+
+function equippedFor(subType, place) {
+  if (subType === "armour") return place === "worn"
+  if (subType === "weapon") return place === "hands" || place === "pocket"
+  return false
+}
+
+/** Место по старой экипировке — для вещей, которым место ещё не задавали */
+function placeFromEquipped(subType, equipped, current = "pack") {
+  if (subType === "armour") return equipped ? "worn" : current === "worn" ? "pack" : current
+  if (subType === "weapon") {
+    if (equipped) return current === "hands" || current === "pocket" ? current : "hands"
+    return current === "hands" || current === "pocket" ? "pack" : current
+  }
+  return current
+}
+
 function placeOf(item) {
-  const p = flag(item, "place", "pack")
-  if (p === "neck" && !isAmulet(item)) return "pack"
-  return PLACES[p] ? p : "pack"
+  const allowed = placesFor(subTypeOf(item), isAmulet(item))
+  const stored = flag(item, "place", undefined)
+  const p = stored ?? placeFromEquipped(subTypeOf(item), !!item.system?.equipped)
+  return allowed.includes(p) ? p : "pack"
 }
 
 function placeCycle(item) {
-  const order = isAmulet(item) ? ["pack", "hands", "pocket", "neck"] : ["pack", "hands", "pocket"]
+  const order = placesFor(subTypeOf(item), isAmulet(item))
   const i = order.indexOf(placeOf(item))
   return order[(i + 1) % order.length]
+}
+
+/** Одно обновление: место + экипировка вместе */
+function setPlace(item, place) {
+  return item.update({ [`flags.${MOD}.place`]: place, "system.equipped": equippedFor(subTypeOf(item), place) })
 }
 
 function isOurCharacter(actor) {
@@ -169,6 +208,7 @@ function relabelWealth(element) {
 function decorateCharacterSheet(app, element) {
   const actor = app.document
   const editable = app.isEditable
+  const equippedLabel = game.i18n.localize("INTOTHEODD.Equipment.FIELDS.equipped.label")
 
   relabelWealth(element)
 
@@ -186,14 +226,21 @@ function decorateCharacterSheet(app, element) {
 
     row.querySelectorAll(".nk-tag, .nk-place-btn").forEach((el) => el.remove())
 
+    // Системная экипировка заменена местом: прячем щит и бирку «Equipped»
+    row.querySelectorAll('[data-action="equip"], [data-action="unequip"]').forEach((el) => el.classList.add("nk-hidden"))
+    for (const info of row.querySelectorAll("summary .item-info:not(.nk-tag)")) {
+      if (info.textContent.trim() === equippedLabel) info.classList.add("nk-hidden")
+    }
+
     const place = placeOf(item)
     const slots = slotsOf(item)
     const tags = []
-    if (place === "pack") {
+    if (place !== "pack") {
+      tags.push(`<span class="item-info nk-tag nk-tag-place"><i class="${PLACES[place].icon}"></i> ${PLACES[place].label}</span>`)
+    }
+    if (place === "pack" || place === "worn") {
       const shown = (isAmulet(item) ? Math.min(slots, 1) : slots) * qtyOf(item)
       tags.push(`<span class="item-info nk-tag" data-tooltip="Занимает ячеек инвентаря">${shown} яч.</span>`)
-    } else {
-      tags.push(`<span class="item-info nk-tag nk-tag-place"><i class="${PLACES[place].icon}"></i> ${PLACES[place].label}</span>`)
     }
     if (isAmulet(item)) tags.push(`<span class="item-info nk-tag">амулет</span>`)
     row.querySelector("summary > span")?.insertAdjacentHTML("beforeend", tags.join(""))
@@ -208,7 +255,7 @@ function decorateCharacterSheet(app, element) {
       controls?.querySelector(".nk-place-btn")?.addEventListener("click", (ev) => {
         ev.preventDefault()
         ev.stopPropagation()
-        item.setFlag(MOD, "place", next)
+        setPlace(item, next)
       })
     }
 
@@ -358,10 +405,12 @@ function decorateItemSheet(app, element) {
   const dis = app.isEditable ? "" : "disabled"
   const place = placeOf(item)
   const amulet = isAmulet(item)
-  const options = Object.entries(PLACES)
-    .filter(([k]) => k !== "neck" || amulet)
-    .map(([k, v]) => `<option value="${k}" ${k === place ? "selected" : ""}>${v.label}</option>`)
+  const options = placesFor(subTypeOf(item), amulet)
+    .map((k) => `<option value="${k}" ${k === place ? "selected" : ""}>${PLACES[k].label}</option>`)
     .join("")
+
+  // Галочку «экипировано» заменяет «Где лежит» — убираем её, чтобы не двоилось
+  element.querySelector('[name="system.equipped"]')?.closest(".form-group")?.remove()
 
   const html = `<section class="nk-item">
     <fieldset>
@@ -411,6 +460,27 @@ Hooks.on("renderActorSheetV2", (app, element) => {
     decorateCharacterSheet(app, element)
   } catch (err) {
     console.error(`${MOD} | character sheet`, err)
+  }
+})
+
+// Держим место и экипировку согласованными, кто бы их ни менял
+Hooks.on("preUpdateItem", (item, changes) => {
+  if (game.system.id !== SYS || item.type !== "equipment") return
+  const get = (path) => foundry.utils.getProperty(changes, path)
+  const subType = get("system.subType") ?? subTypeOf(item)
+  const amulet = get(`flags.${MOD}.amulet`) ?? isAmulet(item)
+  const newPlace = get(`flags.${MOD}.place`)
+  const newEquipped = get("system.equipped")
+
+  if (newPlace !== undefined) {
+    const place = placesFor(subType, amulet).includes(newPlace) ? newPlace : "pack"
+    foundry.utils.setProperty(changes, `flags.${MOD}.place`, place)
+    foundry.utils.setProperty(changes, "system.equipped", equippedFor(subType, place))
+  } else if (newEquipped !== undefined || get("system.subType") !== undefined) {
+    const equipped = newEquipped ?? !!item.system.equipped
+    const place = placeFromEquipped(subType, equipped, placeOf(item))
+    foundry.utils.setProperty(changes, `flags.${MOD}.place`, place)
+    foundry.utils.setProperty(changes, "system.equipped", equippedFor(subType, place))
   }
 })
 
