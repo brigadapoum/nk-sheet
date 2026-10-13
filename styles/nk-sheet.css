@@ -11,6 +11,11 @@
   padding-right: 6px;
 }
 
+/* Скрытые поля (шиллинги) */
+.intotheodd.actor.character .nk-hidden {
+  display: none !important;
+}
+
 /* Плашка нагрузки */
 .intotheodd.actor.character .nk-load {
   display: flex;

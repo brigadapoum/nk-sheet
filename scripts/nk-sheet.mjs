@@ -152,9 +152,25 @@ function renderLoadBar(actor) {
   </div>`
 }
 
+/** Деньги: пенни → Янтарь, гульдены → Опыт, шиллинги скрыты */
+function relabelWealth(element) {
+  const group = (field) => element.querySelector(`[name="system.wealth.${field}"]`)?.closest(".form-group")
+  const rename = (field, text) => {
+    const label = group(field)?.querySelector("label")
+    if (label) label.textContent = text
+  }
+  rename("pennies", "Янтарь")
+  rename("guilders", "Опыт")
+  group("shillings")?.classList.add("nk-hidden")
+  const legend = element.querySelector(".character-wealth legend")
+  if (legend) legend.textContent = "Янтарь и опыт"
+}
+
 function decorateCharacterSheet(app, element) {
   const actor = app.document
   const editable = app.isEditable
+
+  relabelWealth(element)
 
   // Плашка нагрузки над инвентарём
   const tab = element.querySelector(".tab.character-inventory")
