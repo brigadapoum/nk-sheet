@@ -1,0 +1,39 @@
+{
+  "name": "Глубокий Фокус",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>2 ячейки</em></p><p>Передышка восстанавливает 2d6+2 HP. 2 ячейки.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-amulets/Глубокий Фокус",
+      "section": "Амулеты",
+      "price": 400,
+      "resale": 200,
+      "amulet": true,
+      "amuletSlots": 2,
+      "noSale": true
+    }
+  },
+  "_id": "FSUbwbfD5TqYuO5N",
+  "folder": "DxfzHN0yH5eIC0RM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!FSUbwbfD5TqYuO5N"
+}

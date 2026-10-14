@@ -1,0 +1,37 @@
+{
+  "name": "Раскалённая Печать",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Металлический предмет становится обжигающе горячим. Если его нельзя быстро сбросить, владелец получает d8 урона. Броня игнорируется.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-seals/Раскалённая Печать",
+      "section": "Печати",
+      "price": 120,
+      "resale": 60,
+      "seal": true
+    }
+  },
+  "_id": "1FAPzrJReKtlGFin",
+  "folder": "6YlCY6HZCWLAFBiZ",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!1FAPzrJReKtlGFin"
+}

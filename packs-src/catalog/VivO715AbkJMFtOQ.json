@@ -1,0 +1,36 @@
+{
+  "name": "Капкан",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Ловушка на зверя или непрошеного гостя.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-tools/Капкан",
+      "section": "Инструменты",
+      "price": 60,
+      "resale": 30
+    }
+  },
+  "_id": "VivO715AbkJMFtOQ",
+  "folder": "E1WlO3ItWjixrkQ7",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!VivO715AbkJMFtOQ"
+}

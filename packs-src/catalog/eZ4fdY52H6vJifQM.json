@@ -1,0 +1,36 @@
+{
+  "name": "Погребальный панцирь",
+  "type": "equipment",
+  "system": {
+    "subType": "armour",
+    "description": "<p><em>+1 A, Громоздкое · Ценность при обмене: 700 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Чёрные лакированные пластины, сочленения забиты окаменевшим ладаном, на груди — прорези, как у курильницы. В нём Прежние провожали мёртвых. На доспех наложена постоянная Печать — Зловонная Курильщица: по желанию носящего из сочленений валит зелёный дым и окутывает его и всех Близко и Рядом. Снаряды сквозь дым не пролетают. Дым держится, пока носящий стоит на месте. От панциря всегда пахнет ладаном и гнилью: подкрасться в нём нельзя, а падальщики идут на запах.</p>",
+    "armour": 1,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Погребальный панцирь",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "eZ4fdY52H6vJifQM",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!eZ4fdY52H6vJifQM"
+}

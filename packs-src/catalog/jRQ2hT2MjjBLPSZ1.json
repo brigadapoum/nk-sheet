@@ -1,0 +1,36 @@
+{
+  "name": "Факел",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>1 ячейка, 1 час</em></p><p>Горит 1 час (6 ходов, 1/4 Фазы). Чтобы пройти неосвещённый гекс, нужно 4 факела.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-light/Факел",
+      "section": "Свет",
+      "price": 1,
+      "slots": 1
+    }
+  },
+  "_id": "jRQ2hT2MjjBLPSZ1",
+  "folder": "D5kWEc6NInEuvLBj",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!jRQ2hT2MjjBLPSZ1"
+}

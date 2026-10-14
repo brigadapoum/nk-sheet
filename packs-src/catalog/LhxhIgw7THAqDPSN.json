@@ -1,0 +1,36 @@
+{
+  "name": "Гарпунное ружьё",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d8, Громоздкое</em></p><p>Стреляет гарпуном на тросе, можно подтянуть добычу или зацепиться.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d8",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Гарпунное ружьё",
+      "section": "Оружие",
+      "price": 50,
+      "resale": 25
+    }
+  },
+  "_id": "LhxhIgw7THAqDPSN",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!LhxhIgw7THAqDPSN"
+}

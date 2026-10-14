@@ -1,0 +1,36 @@
+{
+  "name": "Щелкун",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d10, Громоздкое · Ценность при обмене: 400 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Тяжёлый посох из цельного панциря вымершего жука-щелкуна, по всей длине — письмо Прежних. По свисту хозяина щёлкает и летит к нему самым удобным путём. Щёлкает сам, когда рядом кто-то прячется.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d10",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Щелкун",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "sqgPrWLIDGHk6ZmH",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!sqgPrWLIDGHk6ZmH"
+}

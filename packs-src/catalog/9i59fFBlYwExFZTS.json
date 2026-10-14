@@ -1,0 +1,36 @@
+{
+  "name": "Сабля Муравьиного Капитана",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6 · Ценность при обмене: 1200 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Узкая рыжая сабля, пахнет кислотой. С такими Прежние водили в бой муравьиные легионы. Пока носишь её и ведёшь боевой отряд, его бойцы получают +1 к броне. Муравьи принимают носящего за капитана и ждут приказов.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Сабля Муравьиного Капитана",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "9i59fFBlYwExFZTS",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!9i59fFBlYwExFZTS"
+}

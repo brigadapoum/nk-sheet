@@ -1,0 +1,36 @@
+{
+  "name": "Панцирный клинок",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6 и d4 · Ценность при обмене: 1300 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Широкий клинок из слоистого хитина, гарда в виде сомкнутых надкрыльев — ими можно бить, как щитом (d4). Клинок сам подставляется под смертельный удар: пока носишь его, спасброски против критического урона — с преимуществом.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Панцирный клинок",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "rDXVDH4fIarLKMcO",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!rDXVDH4fIarLKMcO"
+}

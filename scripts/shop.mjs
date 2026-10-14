@@ -18,8 +18,8 @@ import {
 
 const DEFAULT_WALLET = 1000
 const DEFAULT_MIN_SELL = 5
-const SHOP_KEYS = ["price", "resale", "section", "stock", "gmOnly"]
-const SECTION_ORDER = ["Свет", "Снаряжение", "Оружие", "Броня", "Печати", "Амулеты", "Артефакты"]
+const SHOP_KEYS = ["price", "resale", "section", "stock", "gmOnly", "noSale"]
+const SECTION_ORDER = ["Свет", "Боеприпасы", "Инструменты", "Снаряжение", "Алхимия", "Одежда и роскошь", "Еда", "Оружие", "Броня", "Печати", "Амулеты", "Артефакты"]
 const ALL = "__all"
 
 /* -------------------------------------------- */
@@ -50,6 +50,8 @@ export const stockOf = (i) => {
   return s === null ? null : Math.max(Math.floor(s), 0)
 }
 export const gmOnlyOf = (i) => flag(i, "gmOnly", null) ?? isArtifact(i)
+/** Только скупка: торговец такое покупает у Жуков, но сам не продаёт */
+export const noSaleOf = (i) => !!flag(i, "noSale", false)
 
 export function defaultSection(i) {
   if (isSeal(i)) return "Печати"
@@ -73,7 +75,7 @@ function sortSections(list) {
 
 /** Товары, которые видит пользователь */
 function goodsOf(merchant, gm) {
-  return merchant.items.filter((i) => isEquipment(i) && (gm || (priceOf(i) !== null && !gmOnlyOf(i))))
+  return merchant.items.filter((i) => isEquipment(i) && (gm || (priceOf(i) !== null && !gmOnlyOf(i) && !noSaleOf(i))))
 }
 
 /** «Двойник» вещи Жука в ассортименте торговца */
@@ -149,6 +151,7 @@ export function merchantRowTags(item) {
   if (stock === 0) tags.push(`<span class="item-info nk-tag nk-tag-bad">нет в наличии</span>`)
   else if (stock !== null) tags.push(`<span class="item-info nk-tag nk-muted">запас ${stock}</span>`)
   if (gmOnlyOf(item)) tags.push(`<span class="item-info nk-tag nk-muted"><i class="fa-solid fa-eye-slash"></i> только мастер</span>`)
+  if (noSaleOf(item)) tags.push(`<span class="item-info nk-tag nk-muted">только скупка</span>`)
   return tags
 }
 
@@ -187,6 +190,11 @@ export function shopItemFieldsHTML(item, dis) {
       <label>Только мастер</label>
       <div class="form-fields"><input type="checkbox" name="flags.${MOD}.gmOnly" ${gmOnlyOf(item) ? "checked" : ""} ${dis}></div>
       <p class="hint">Игроки не видят товар в лавке. Мастер может выдать его кнопкой «Выдать».</p>
+    </div>
+    <div class="form-group">
+      <label>Только скупка</label>
+      <div class="form-fields"><input type="checkbox" name="flags.${MOD}.noSale" ${noSaleOf(item) ? "checked" : ""} ${dis}></div>
+      <p class="hint">Торговец не продаёт эту вещь, но покупает её у Жуков по цене продажи (например, найденные амулеты).</p>
     </div>
   </fieldset>`
 }
@@ -318,8 +326,9 @@ class ShopApp extends ApplicationV2 {
           slots: slotsForNew(i, 1),
           price,
           stock,
-          hidden: gmOnlyOf(i) || price === null,
-          canBuy: price !== null && stock !== 0 && !!buyer && (!gmOnlyOf(i) || gm),
+          hidden: gmOnlyOf(i) || price === null || noSaleOf(i),
+          noSale: noSaleOf(i),
+          canBuy: price !== null && stock !== 0 && !!buyer && !noSaleOf(i) && (!gmOnlyOf(i) || gm),
           desc: this.expanded.has(i.id) ? await enrich(i) : null,
         })
       }
@@ -398,6 +407,7 @@ class ShopApp extends ApplicationV2 {
                   <a class="nk-row-name" data-action="toggle" data-item-id="${r.id}">${esc(r.name)}</a>
                   ${r.kinds}
                   ${r.hidden ? `<i class="fa-solid fa-eye-slash nk-muted" data-tooltip="Игроки этот товар не видят"></i>` : ""}
+                  ${r.noSale ? `<span class="nk-muted">только скупка</span>` : ""}
                   ${stock}
                   <span class="nk-grow"></span>
                   <span class="nk-slot">${r.slots} яч.</span>
@@ -691,7 +701,7 @@ const HANDLERS = {
     if (!item) return { error: "Этого товара уже нет." }
     const price = priceOf(item)
     if (price === null) return { error: "У товара не задана цена." }
-    if (gmOnlyOf(item) && !user.isGM) return { error: "Этот товар не продаётся." }
+    if ((gmOnlyOf(item) && !user.isGM) || noSaleOf(item)) return { error: "Этот товар не продаётся." }
     const stock = stockOf(item)
     if (stock === 0) return { error: "Нет в наличии." }
     const n = Math.clamp(Math.floor(Number(p.qty)) || 1, 1, stock ?? 999)

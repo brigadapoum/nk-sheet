@@ -1,0 +1,37 @@
+{
+  "name": "Тень",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Пройди Спас Ловкости (DEX) и стань невидимым в тени. Не выдавай себя движением. Если кто-то будет тебя искать, нужно будет повторить Спас. При провале тебя увидят. Растворяясь в тени, ты видишь сквозь тьму. 1 ячейка.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-amulets/Тень",
+      "section": "Амулеты",
+      "price": 350,
+      "resale": 175,
+      "amulet": true
+    }
+  },
+  "_id": "d3DzIgXxCdhDMSes",
+  "folder": "DxfzHN0yH5eIC0RM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!d3DzIgXxCdhDMSes"
+}

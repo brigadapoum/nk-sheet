@@ -1,0 +1,36 @@
+{
+  "name": "Двуствольный пистолет",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>2d4, Громоздкое</em></p><p>Два ствола, два выстрела подряд без перезарядки.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "2d4",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Двуствольный пистолет",
+      "section": "Оружие",
+      "price": 70,
+      "resale": 35
+    }
+  },
+  "_id": "2ZCYP4n1YYe4ALkt",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!2ZCYP4n1YYe4ALkt"
+}

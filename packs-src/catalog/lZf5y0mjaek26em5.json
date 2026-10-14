@@ -1,0 +1,37 @@
+{
+  "name": "Мёрзлое Облако",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Парит по вашей воле. Занимает одну зону. Все внутри получают d6 урона (1 раз) и не могут двигаться (1 час), если не пройдут спасбросок Силы (STR).</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-seals/Мёрзлое Облако",
+      "section": "Печати",
+      "price": 270,
+      "resale": 140,
+      "seal": true
+    }
+  },
+  "_id": "lZf5y0mjaek26em5",
+  "folder": "6YlCY6HZCWLAFBiZ",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!lZf5y0mjaek26em5"
+}

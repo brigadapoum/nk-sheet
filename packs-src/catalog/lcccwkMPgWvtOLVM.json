@@ -1,0 +1,36 @@
+{
+  "name": "Праща",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6</em></p><p>Ремень для метания камней и дроби.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Праща",
+      "section": "Оружие",
+      "price": 15,
+      "resale": 7
+    }
+  },
+  "_id": "lcccwkMPgWvtOLVM",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!lcccwkMPgWvtOLVM"
+}

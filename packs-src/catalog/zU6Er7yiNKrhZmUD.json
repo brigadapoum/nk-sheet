@@ -1,0 +1,36 @@
+{
+  "name": "Лук",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6, Громоздкое</em></p><p>Требует обеих лап и места для замаха.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Лук",
+      "section": "Оружие",
+      "price": 20,
+      "resale": 10
+    }
+  },
+  "_id": "zU6Er7yiNKrhZmUD",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!zU6Er7yiNKrhZmUD"
+}

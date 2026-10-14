@@ -1,0 +1,37 @@
+{
+  "name": "Стрелы, колчан",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>1 ячейка</em></p><p>Запас стрел для лука.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-light/Стрелы, колчан",
+      "section": "Боеприпасы",
+      "price": 5,
+      "resale": 2,
+      "slots": 1
+    }
+  },
+  "_id": "Rh6PNsOZYowaBCeb",
+  "folder": "lefDFmvMyOxjItct",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!Rh6PNsOZYowaBCeb"
+}

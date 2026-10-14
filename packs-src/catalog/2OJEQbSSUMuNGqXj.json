@@ -1,0 +1,36 @@
+{
+  "name": "Длинное жало, копьё",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d8, Громоздкое</em></p><p>Вытянутое древко с узким жалом на конце, держит противника на расстоянии.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d8",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Длинное жало, копьё",
+      "section": "Оружие",
+      "price": 40,
+      "resale": 20
+    }
+  },
+  "_id": "2OJEQbSSUMuNGqXj",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!2OJEQbSSUMuNGqXj"
+}

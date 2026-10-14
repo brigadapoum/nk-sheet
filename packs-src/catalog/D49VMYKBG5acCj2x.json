@@ -1,0 +1,36 @@
+{
+  "name": "Клык Многоножки",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d8, Громоздкое · Ценность при обмене: 500 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Полый чёрный клык вымершей многоножки — Прежние держали их вместо сторожевых псов. С кончика всегда сочится капля яда. При критическом уроне — ещё d6 урона Ловкости.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d8",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Клык Многоножки",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "D49VMYKBG5acCj2x",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!D49VMYKBG5acCj2x"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Печать Приказа",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Прикажите цели упасть, бежать или замереть, если она не пройдёт спасбросок Воли (WIL).</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-seals/Печать Приказа",
+      "section": "Печати",
+      "price": 180,
+      "resale": 90,
+      "seal": true
+    }
+  },
+  "_id": "SIGpf15j6GHFVGwY",
+  "folder": "6YlCY6HZCWLAFBiZ",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!SIGpf15j6GHFVGwY"
+}

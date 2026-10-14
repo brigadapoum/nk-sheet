@@ -1,0 +1,36 @@
+{
+  "name": "Трость-клинок",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6</em></p><p>С виду обычная трость, внутри скрыт клинок.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Трость-клинок",
+      "section": "Оружие",
+      "price": 30,
+      "resale": 15
+    }
+  },
+  "_id": "NbLDag3X9Cfnn9Ox",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!NbLDag3X9Cfnn9Ox"
+}

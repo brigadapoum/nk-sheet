@@ -1,0 +1,36 @@
+{
+  "name": "Тонизирующее зелье",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>+d6 HP</em></p><p>Придаёт сил на рывок — восстанавливает d6 HP.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-alchemy/Тонизирующее зелье",
+      "section": "Алхимия",
+      "price": 30,
+      "resale": 15
+    }
+  },
+  "_id": "jJvlAIakwJN0eeCB",
+  "folder": "kK3qszzKGyL1zI32",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!jJvlAIakwJN0eeCB"
+}

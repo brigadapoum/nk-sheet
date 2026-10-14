@@ -1,0 +1,36 @@
+{
+  "name": "Современный баклер",
+  "type": "equipment",
+  "system": {
+    "subType": "armour",
+    "description": "<p><em>+1 A</em></p><p>Лёгкий щит нового образца. Редко встречается, пока у [Литейщика] нет рабочих.</p>",
+    "armour": 1,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "armor-common/Современный баклер",
+      "section": "Броня",
+      "price": 250,
+      "resale": 125
+    }
+  },
+  "_id": "337yDDQvO0VA6xXE",
+  "folder": "OSaNgWGSNvCHGNJt",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!337yDDQvO0VA6xXE"
+}

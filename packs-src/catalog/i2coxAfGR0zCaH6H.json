@@ -1,0 +1,38 @@
+{
+  "name": "Колючки",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Когда получаешь урон по Силе (STR), атаковавший тебя получает d4 урона колючками. 1 ячейка.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-amulets/Колючки",
+      "section": "Амулеты",
+      "price": 250,
+      "resale": 125,
+      "amulet": true,
+      "noSale": true
+    }
+  },
+  "_id": "i2coxAfGR0zCaH6H",
+  "folder": "DxfzHN0yH5eIC0RM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!i2coxAfGR0zCaH6H"
+}

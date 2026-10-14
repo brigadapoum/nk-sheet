@@ -1,0 +1,36 @@
+{
+  "name": "Посох",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6, Громоздкое</em></p><p>Длинный шест, годится и как оружие, и как опора.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Посох",
+      "section": "Оружие",
+      "price": 5,
+      "resale": 2
+    }
+  },
+  "_id": "0PH8v6rssHv60OZ3",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!0PH8v6rssHv60OZ3"
+}

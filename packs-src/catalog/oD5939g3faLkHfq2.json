@@ -1,0 +1,36 @@
+{
+  "name": "Музыкальный инструмент",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Для игры и выступлений.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-luxury/Музыкальный инструмент",
+      "section": "Одежда и роскошь",
+      "price": 120,
+      "resale": 60
+    }
+  },
+  "_id": "oD5939g3faLkHfq2",
+  "folder": "inEAc2PNB7GjrK1S",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!oD5939g3faLkHfq2"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Быстрый Фокус",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>3 ячейки</em></p><p>В бою за один раунд делаешь Длительный отдых. Через полчаса (3 Хода) после боя Жук засыпает и должен отдыхать столько Фаз, сколько раз применил амулет; на каждую такую Фазу — одна проверка столкновений. Этот отдых не восстанавливает HP. 3 ячейки.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-amulets/Быстрый Фокус",
+      "section": "Амулеты",
+      "price": 450,
+      "resale": 225,
+      "amulet": true,
+      "amuletSlots": 3,
+      "noSale": true
+    }
+  },
+  "_id": "gBA1f6vWWSmzKC4K",
+  "folder": "DxfzHN0yH5eIC0RM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!gBA1f6vWWSmzKC4K"
+}

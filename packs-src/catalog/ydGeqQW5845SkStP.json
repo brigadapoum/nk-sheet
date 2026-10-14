@@ -1,0 +1,36 @@
+{
+  "name": "Серп Хлада",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6 · Ценность при обмене: 500 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Изогнутое жвало из синеватого хитина под вечным инеем. В янтарной рукояти застыл крошечный белый комар. Раненный серпом Истощён и мёрзнет до самого корня, пока не посидит у огня хотя бы час. Хозяину серпа никогда не бывает по-настоящему тепло.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Серп Хлада",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "ydGeqQW5845SkStP",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!ydGeqQW5845SkStP"
+}

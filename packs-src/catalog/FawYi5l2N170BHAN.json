@@ -1,0 +1,37 @@
+{
+  "name": "Мысленож",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Цель должна пройти Спас Ловкости (DEX), чтобы избежать прикосновения, иначе она теряет d6 очков Воли (WIL), а ты получаешь представление об ее актуальных желаниях. 1 ячейка.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-amulets/Мысленож",
+      "section": "Амулеты",
+      "price": 350,
+      "resale": 175,
+      "amulet": true
+    }
+  },
+  "_id": "FawYi5l2N170BHAN",
+  "folder": "DxfzHN0yH5eIC0RM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!FawYi5l2N170BHAN"
+}

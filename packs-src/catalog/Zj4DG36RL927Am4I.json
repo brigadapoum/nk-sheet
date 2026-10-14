@@ -1,0 +1,36 @@
+{
+  "name": "Защитные перчатки",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Хватать горячее, острое, едкое голыми руками — уже не так голыми.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-tools/Защитные перчатки",
+      "section": "Инструменты",
+      "price": 25,
+      "resale": 12
+    }
+  },
+  "_id": "Zj4DG36RL927Am4I",
+  "folder": "E1WlO3ItWjixrkQ7",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!Zj4DG36RL927Am4I"
+}

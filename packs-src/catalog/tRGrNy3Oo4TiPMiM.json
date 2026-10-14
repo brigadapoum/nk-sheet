@@ -1,0 +1,37 @@
+{
+  "name": "Печать Шанса",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Раздавите керамическую розу, чтобы поднять шанс успеха одного действия до 1/2 (невозможное возможным не станет).</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-seals/Печать Шанса",
+      "section": "Печати",
+      "price": 220,
+      "resale": 110,
+      "seal": true
+    }
+  },
+  "_id": "tRGrNy3Oo4TiPMiM",
+  "folder": "6YlCY6HZCWLAFBiZ",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!tRGrNy3Oo4TiPMiM"
+}

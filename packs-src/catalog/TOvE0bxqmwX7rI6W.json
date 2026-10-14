@@ -1,0 +1,37 @@
+{
+  "name": "Переносной таран",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>Громоздкое, 2 ячейки</em></p><p>Выбивает двери и решётки без разбега отряда.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-tools/Переносной таран",
+      "section": "Инструменты",
+      "price": 60,
+      "resale": 30,
+      "slots": 2
+    }
+  },
+  "_id": "TOvE0bxqmwX7rI6W",
+  "folder": "E1WlO3ItWjixrkQ7",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!TOvE0bxqmwX7rI6W"
+}

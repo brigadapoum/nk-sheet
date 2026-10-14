@@ -1,0 +1,36 @@
+{
+  "name": "Песочные часы",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Отмеряют время.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-luxury/Песочные часы",
+      "section": "Одежда и роскошь",
+      "price": 180,
+      "resale": 90
+    }
+  },
+  "_id": "lzGZBwH0M2VMD2vz",
+  "folder": "inEAc2PNB7GjrK1S",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!lzGZBwH0M2VMD2vz"
+}

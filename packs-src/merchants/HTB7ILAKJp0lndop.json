@@ -1,0 +1,2958 @@
+{
+  "_id": "HTB7ILAKJp0lndop",
+  "name": "Мэтр Лампаньон",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "<p>Эксцентричный торговец из Алотэ. Торговал здесь ещё до прихода новых правителей. Хранит свои секреты.</p>",
+    "wealth": {
+      "guilders": 0,
+      "shillings": 0,
+      "pennies": 0
+    }
+  },
+  "prototypeToken": {
+    "name": "Мэтр Лампаньон",
+    "actorLink": true,
+    "displayName": 20,
+    "disposition": 0
+  },
+  "items": [
+    {
+      "name": "Факел",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>1 ячейка, 1 час</em></p><p>Горит 1 час (6 ходов, 1/4 Фазы). Чтобы пройти неосвещённый гекс, нужно 4 факела.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-light/Факел",
+          "section": "Свет",
+          "price": 1,
+          "slots": 1
+        }
+      },
+      "_id": "HfXFh6Z9TiNhzQT7",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.HfXFh6Z9TiNhzQT7"
+    },
+    {
+      "name": "Фляга масла для лампы",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>1 ячейка, 4 часа</em></p><p>Одна заправка лампы: 4 часа света.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-light/Фляга масла для лампы",
+          "section": "Свет",
+          "price": 5,
+          "resale": 2,
+          "slots": 1
+        }
+      },
+      "_id": "p9YrCeIVtK0uPCL7",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.p9YrCeIVtK0uPCL7"
+    },
+    {
+      "name": "Лампа",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>1 ячейка</em></p><p>Горит 4 часа на одной заправке. По деньгам дороже факелов, зато экономит ячейки.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-light/Лампа",
+          "section": "Свет",
+          "price": 40,
+          "resale": 20,
+          "slots": 1
+        }
+      },
+      "_id": "V2IMHdNjTQiBcUSv",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.V2IMHdNjTQiBcUSv"
+    },
+    {
+      "name": "Готовые светомушки",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>1 ячейка, зарядка фонаря на 2 часа</em></p><p>Мгновенно заряжают фонарь на 2 часа, когда некогда или негде ловить светомушек.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-light/Готовые светомушки",
+          "section": "Свет",
+          "price": 10,
+          "resale": 5,
+          "slots": 1
+        }
+      },
+      "_id": "GANIzOrZmfBTBB3r",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.GANIzOrZmfBTBB3r"
+    },
+    {
+      "name": "Светлячковый фонарь",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>1 ячейка, 2 часа света; перезарядка бесплатно — поймать светомушек вне данжей, 1/4 Фазы</em></p><p>Даёт 2 часа света. Перезарядка бесплатная, но светомушек ловят только вне данжей (1/4 Фазы).</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-light/Светлячковый фонарь",
+          "section": "Свет",
+          "price": 60,
+          "resale": 30,
+          "slots": 1
+        }
+      },
+      "_id": "8SCABgq7Z6vmGksl",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.8SCABgq7Z6vmGksl"
+    },
+    {
+      "name": "Пули и порох",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>1 ячейка</em></p><p>Боеприпасы для пистолетов, мушкетов и гарпунных ружей.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-light/Пули и порох",
+          "section": "Боеприпасы",
+          "price": 10,
+          "resale": 5,
+          "slots": 1
+        }
+      },
+      "_id": "pQDQMMP0JBuzO9Qi",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.pQDQMMP0JBuzO9Qi"
+    },
+    {
+      "name": "Стрелы, колчан",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>1 ячейка</em></p><p>Запас стрел для лука.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-light/Стрелы, колчан",
+          "section": "Боеприпасы",
+          "price": 5,
+          "resale": 2,
+          "slots": 1
+        }
+      },
+      "_id": "T3awbo07SAYBDrWJ",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.T3awbo07SAYBDrWJ"
+    },
+    {
+      "name": "Камни для пращи, мешочек",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Запас метательных камней для пращи.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-light/Камни для пращи, мешочек",
+          "section": "Боеприпасы",
+          "price": 1
+        }
+      },
+      "_id": "LH9Ohw6q6kTZhtA0",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.LH9Ohw6q6kTZhtA0"
+    },
+    {
+      "name": "Мел",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Помечать стены и путь, чертить схемы.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Мел",
+          "section": "Инструменты",
+          "price": 1
+        }
+      },
+      "_id": "j2Bs1Ev31bf0fL4L",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.j2Bs1Ev31bf0fL4L"
+    },
+    {
+      "name": "Бутылка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Тара для жидкостей, зелий и масла.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Бутылка",
+          "section": "Инструменты",
+          "price": 1
+        }
+      },
+      "_id": "SvxT3sonWfHKAari",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.SvxT3sonWfHKAari"
+    },
+    {
+      "name": "Деревянные колья",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Подпорки и распорки, колышки для навеса и простых ловушек.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Деревянные колья",
+          "section": "Инструменты",
+          "price": 1
+        }
+      },
+      "_id": "hxM5lDX7eYxVzGzu",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.hxM5lDX7eYxVzGzu"
+    },
+    {
+      "name": "Шест",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>Громоздкое</em></p><p>Щупать пол и потолок, проверять глубину, перебираться через препятствия.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": true,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Шест",
+          "section": "Инструменты",
+          "price": 1
+        }
+      },
+      "_id": "8oxTEFvwDlAWQpI8",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.8oxTEFvwDlAWQpI8"
+    },
+    {
+      "name": "Клей",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Склеивает, держит мелкие вещи на месте.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Клей",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "uDDuIQF5hQZElSwT",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.uDDuIQF5hQZElSwT"
+    },
+    {
+      "name": "Зубило",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Долбить камень, выбивать замки и заклёпки.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Зубило",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "HKR6BopvT0UYvSPc",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.HKR6BopvT0UYvSPc"
+    },
+    {
+      "name": "Напильник",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Спиливать замки, прутья и заусенцы.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Напильник",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "BBYD7eWXo24QglSa",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.BBYD7eWXo24QglSa"
+    },
+    {
+      "name": "Свисток",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Подавать сигнал на расстоянии.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Свисток",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "aHoeTd7BlqpYtzDN",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.aHoeTd7BlqpYtzDN"
+    },
+    {
+      "name": "Мыло",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Мыться; скользкое мыло на полу или ступенях.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Мыло",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "ooI54KIqzjdMgGy7",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.ooI54KIqzjdMgGy7"
+    },
+    {
+      "name": "Бурдюк",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Носить воду или другую жидкость.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Бурдюк",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "i4oNkc9G7DQ8W7xo",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.i4oNkc9G7DQ8W7xo"
+    },
+    {
+      "name": "Ведро",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Носить воду, землю, всякую мелочь.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Ведро",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "jFHRFzi6Z8DJu6DG",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.jFHRFzi6Z8DJu6DG"
+    },
+    {
+      "name": "Верёвка, моток",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Лазить, спускаться, вязать и тянуть.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Верёвка, моток",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "cHFnvP91mWS9OnMY",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.cHFnvP91mWS9OnMY"
+    },
+    {
+      "name": "Лом",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Вскрывать, поддевать, взламывать.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Лом",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "LYFKLwKpPnh4TDUE",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.LYFKLwKpPnh4TDUE"
+    },
+    {
+      "name": "Лопата",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Копать землю и разгребать завалы.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Лопата",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "jwQbB0IwRT98LfJk",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.jwQbB0IwRT98LfJk"
+    },
+    {
+      "name": "Молоток",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Забивать, крушить, чинить.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Молоток",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "y6fOHXlki8UClD46",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.y6fOHXlki8UClD46"
+    },
+    {
+      "name": "Пила/Ножовка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Пилить дерево, кость, прутья.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Пила/Ножовка",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "yWTdFZ8EOEOaiAp8",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.yWTdFZ8EOEOaiAp8"
+    },
+    {
+      "name": "Сеть",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Ловить добычу, перегораживать проход.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Сеть",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "vIN6qcMXJzmoYq2V",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.vIN6qcMXJzmoYq2V"
+    },
+    {
+      "name": "Крюк-кошка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Закидывать на выступ и взбираться по верёвке.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Крюк-кошка",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "DFGQLjvPyZ6gLhdC",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.DFGQLjvPyZ6gLhdC"
+    },
+    {
+      "name": "Кандалы",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Сковать пленника.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Кандалы",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "GbbRsnQZPQ5YTond",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.GbbRsnQZPQ5YTond"
+    },
+    {
+      "name": "Котелок",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Варить еду на привале.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Котелок",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "D3tfAthRENimdAWf",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.D3tfAthRENimdAWf"
+    },
+    {
+      "name": "Спальный мешок",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Спать в дороге вне постели.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Спальный мешок",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "9rSWvHVnKsTmXwJA",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.9rSWvHVnKsTmXwJA"
+    },
+    {
+      "name": "Швейная игла и нить",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Чинить одежду, сумки и латать шкуры.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Швейная игла и нить",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "33CG1Jx5Y43edLhX",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.33CG1Jx5Y43edLhX"
+    },
+    {
+      "name": "Рыболовный крючок",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Ловить рыбу и подводных существ.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Рыболовный крючок",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "cZXUpqyVmnTOWBjz",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.cZXUpqyVmnTOWBjz"
+    },
+    {
+      "name": "Малый замок с ключом",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Запирать сундуки, двери, ящики.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Малый замок с ключом",
+          "section": "Инструменты",
+          "price": 20,
+          "resale": 10
+        }
+      },
+      "_id": "b8kWmQgJgbkp6uMI",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.b8kWmQgJgbkp6uMI"
+    },
+    {
+      "name": "Цепь",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Связывать, запирать, тянуть.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Цепь",
+          "section": "Инструменты",
+          "price": 25,
+          "resale": 12
+        }
+      },
+      "_id": "wx4fjgAJfQSmwuUY",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.wx4fjgAJfQSmwuUY"
+    },
+    {
+      "name": "Огниво",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Высекать огонь без спичек.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Огниво",
+          "section": "Инструменты",
+          "price": 50,
+          "resale": 25
+        }
+      },
+      "_id": "nQ8kkoHpKIATviIX",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.nQ8kkoHpKIATviIX"
+    },
+    {
+      "name": "Поясная сумка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Даёт быстрый доступ ещё к 3 мелким предметам.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Поясная сумка",
+          "section": "Инструменты",
+          "price": 50,
+          "resale": 25
+        }
+      },
+      "_id": "nnWoroOujpIFRwLv",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.nnWoroOujpIFRwLv"
+    },
+    {
+      "name": "Навес / палатка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Укрытие на привале.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Навес / палатка",
+          "section": "Инструменты",
+          "price": 50,
+          "resale": 25
+        }
+      },
+      "_id": "pWMi53Xzm7WKKpSx",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.pWMi53Xzm7WKKpSx"
+    },
+    {
+      "name": "Большой замок с ключом",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Запирать ворота и большие двери.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Большой замок с ключом",
+          "section": "Инструменты",
+          "price": 60,
+          "resale": 30
+        }
+      },
+      "_id": "5dLFPUGyK3YSttE7",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.5dLFPUGyK3YSttE7"
+    },
+    {
+      "name": "Капкан",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Ловушка на зверя или непрошеного гостя.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Капкан",
+          "section": "Инструменты",
+          "price": 60,
+          "resale": 30
+        }
+      },
+      "_id": "RoPz7vbXCcgHWHIy",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.RoPz7vbXCcgHWHIy"
+    },
+    {
+      "name": "Отмычки",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Вскрывать замки без ключа.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Отмычки",
+          "section": "Инструменты",
+          "price": 60,
+          "resale": 30
+        }
+      },
+      "_id": "Tm6INWkKELf9jBhI",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.Tm6INWkKELf9jBhI"
+    },
+    {
+      "name": "Переносной таран",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>Громоздкое, 2 ячейки</em></p><p>Выбивает двери и решётки без разбега отряда.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": true,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Переносной таран",
+          "section": "Инструменты",
+          "price": 60,
+          "resale": 30,
+          "slots": 2
+        }
+      },
+      "_id": "JmjWDWED3XPUIpzH",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.JmjWDWED3XPUIpzH"
+    },
+    {
+      "name": "Шахматы",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Скоротать время у костра, подначить соперника.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Шахматы",
+          "section": "Инструменты",
+          "price": 20,
+          "resale": 10
+        }
+      },
+      "_id": "UUX5r8BQ313I8MqH",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.UUX5r8BQ313I8MqH"
+    },
+    {
+      "name": "Защитные перчатки",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Хватать горячее, острое, едкое голыми руками — уже не так голыми.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Защитные перчатки",
+          "section": "Инструменты",
+          "price": 25,
+          "resale": 12
+        }
+      },
+      "_id": "TZXhu8DbttUjDTGy",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.TZXhu8DbttUjDTGy"
+    },
+    {
+      "name": "Колокольчик",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Подать знак, привязать к двери или ловушке.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Колокольчик",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "Hu4xzfndxGKTfoMA",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.Hu4xzfndxGKTfoMA"
+    },
+    {
+      "name": "Крюк с кольцом",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Зацепить, подвесить, протянуть верёвку через кольцо.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Крюк с кольцом",
+          "section": "Инструменты",
+          "price": 15,
+          "resale": 7
+        }
+      },
+      "_id": "Yd3QzHga11LwuMQs",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.Yd3QzHga11LwuMQs"
+    },
+    {
+      "name": "Машинное масло",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Смазать механизм, петлю, замок.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Машинное масло",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "wBm3nTJDkJcbv3Fu",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.wBm3nTJDkJcbv3Fu"
+    },
+    {
+      "name": "Стеклянные шарики",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Рассыпать под ноги преследователю; игра на удачу.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Стеклянные шарики",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "vEvHs6nBDwd7n8tU",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.vEvHs6nBDwd7n8tU"
+    },
+    {
+      "name": "Щипцы",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Достать горячее или опасное, не касаясь руками.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Щипцы",
+          "section": "Инструменты",
+          "price": 10,
+          "resale": 5
+        }
+      },
+      "_id": "wfbBPkDtt4HPXDHz",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.wfbBPkDtt4HPXDHz"
+    },
+    {
+      "name": "Краска",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Пометить путь, замазать герб, разрисовать стену.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Краска",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "1HEGyvmD7o4e3E7q",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.1HEGyvmD7o4e3E7q"
+    },
+    {
+      "name": "Хворост для костра",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Запас топлива на один костёр.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Хворост для костра",
+          "section": "Инструменты",
+          "price": 1
+        }
+      },
+      "_id": "mSDly6bo6BKY0R33",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.mSDly6bo6BKY0R33"
+    },
+    {
+      "name": "Бумага и уголёк",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>3 применения</em></p><p>Записать, срисовать, оставить весть.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-tools/Бумага и уголёк",
+          "section": "Инструменты",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "ZBh4vLF7f71wMGmO",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.ZBh4vLF7f71wMGmO"
+    },
+    {
+      "name": "Дымовая бомба",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Густое облако дыма закрывает обзор.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Дымовая бомба",
+          "section": "Алхимия",
+          "price": 20,
+          "resale": 10
+        }
+      },
+      "_id": "XewpxZ50i3lKF2fW",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.XewpxZ50i3lKF2fW"
+    },
+    {
+      "name": "Вспышка-хлопушка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Яркая вспышка и грохот ошеломляют тех, кто рядом.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Вспышка-хлопушка",
+          "section": "Алхимия",
+          "price": 25,
+          "resale": 12
+        }
+      },
+      "_id": "9aWGV9fjskBcw42t",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.9aWGV9fjskBcw42t"
+    },
+    {
+      "name": "Огненное масло",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Горючая жидкость: поджигать и метать.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Огненное масло",
+          "section": "Алхимия",
+          "price": 25,
+          "resale": 12
+        }
+      },
+      "_id": "Q3BKZVUp3w6erCBb",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.Q3BKZVUp3w6erCBb"
+    },
+    {
+      "name": "Склянка эфира",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Усыпляющие пары, если вдохнуть.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Склянка эфира",
+          "section": "Алхимия",
+          "price": 25,
+          "resale": 12
+        }
+      },
+      "_id": "R153noPNzTGc6GLO",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.R153noPNzTGc6GLO"
+    },
+    {
+      "name": "Склянка кислоты",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Разъедает металл, замки, верёвки.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Склянка кислоты",
+          "section": "Алхимия",
+          "price": 25,
+          "resale": 12
+        }
+      },
+      "_id": "EF0XZG9Jk7CVGQDL",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.EF0XZG9Jk7CVGQDL"
+    },
+    {
+      "name": "Антидот",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Нейтрализует яд.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Антидот",
+          "section": "Алхимия",
+          "price": 25,
+          "resale": 12
+        }
+      },
+      "_id": "sJNC7gNlZeYvacS8",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.sJNC7gNlZeYvacS8"
+    },
+    {
+      "name": "Бомба",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>d10, по площади</em></p><p>Взрыв с уроном d10 по всем в зоне.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": true,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Бомба",
+          "section": "Алхимия",
+          "price": 50,
+          "resale": 25
+        }
+      },
+      "_id": "ZujWelgRh7Ft4Fo1",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.ZujWelgRh7Ft4Fo1"
+    },
+    {
+      "name": "Ракета",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>d10</em></p><p>Ракета с уроном d10, летит на расстояние.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Ракета",
+          "section": "Алхимия",
+          "price": 50,
+          "resale": 25
+        }
+      },
+      "_id": "xFqGfAGMSwGL734k",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.xFqGfAGMSwGL734k"
+    },
+    {
+      "name": "Яд",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Наносится на оружие или подмешивается в еду и питьё.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Яд",
+          "section": "Алхимия",
+          "price": 60,
+          "resale": 30
+        }
+      },
+      "_id": "hSFpmsgczpzm2TNg",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.hSFpmsgczpzm2TNg"
+    },
+    {
+      "name": "Настойка на панцирной смоле",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Терпкая жучья настойка; бодрит не хуже вина.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Настойка на панцирной смоле",
+          "section": "Алхимия",
+          "price": 25,
+          "resale": 12
+        }
+      },
+      "_id": "O1ytBh2VfkWfOAU9",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.O1ytBh2VfkWfOAU9"
+    },
+    {
+      "name": "Лечащее зелье",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>+d6 Сил</em></p><p>Заживляет раны — восстанавливает d6 Сил.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Лечащее зелье",
+          "section": "Алхимия",
+          "price": 60,
+          "resale": 30
+        }
+      },
+      "_id": "hfduqolEC0Jvr5xC",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.hfduqolEC0Jvr5xC"
+    },
+    {
+      "name": "Тонизирующее зелье",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>+d6 HP</em></p><p>Придаёт сил на рывок — восстанавливает d6 HP.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-alchemy/Тонизирующее зелье",
+          "section": "Алхимия",
+          "price": 30,
+          "resale": 15
+        }
+      },
+      "_id": "3zWAw8SKdgTlBEm9",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.3zWAw8SKdgTlBEm9"
+    },
+    {
+      "name": "Бедняцкая одежда",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Простая одежда, чтобы не выделяться.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Бедняцкая одежда",
+          "section": "Одежда и роскошь",
+          "price": 5,
+          "resale": 2
+        }
+      },
+      "_id": "EaNK5qjj3DBN9RwN",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.EaNK5qjj3DBN9RwN"
+    },
+    {
+      "name": "Духи",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Сильный аромат, для приёмов или для сокрытия запаха.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Духи",
+          "section": "Одежда и роскошь",
+          "price": 30,
+          "resale": 15
+        }
+      },
+      "_id": "jkGhEszElrHgQ50O",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.jkGhEszElrHgQ50O"
+    },
+    {
+      "name": "Обычная одежда",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Опрятная одежда для города.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Обычная одежда",
+          "section": "Одежда и роскошь",
+          "price": 30,
+          "resale": 15
+        }
+      },
+      "_id": "sue19cR4qSlT5bI7",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.sue19cR4qSlT5bI7"
+    },
+    {
+      "name": "Водонепроницаемый плащ",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Защищает от дождя и сырости.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Водонепроницаемый плащ",
+          "section": "Одежда и роскошь",
+          "price": 60,
+          "resale": 30
+        }
+      },
+      "_id": "8XhYmXqYdXNc5xce",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.8XhYmXqYdXNc5xce"
+    },
+    {
+      "name": "Зимний плащ",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Тёплый плащ для холода.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Зимний плащ",
+          "section": "Одежда и роскошь",
+          "price": 90,
+          "resale": 45
+        }
+      },
+      "_id": "V7RQAKU1SGfdy714",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.V7RQAKU1SGfdy714"
+    },
+    {
+      "name": "Дворянская одежда",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Одежда для приёмов, открывает двери в высшем обществе.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Дворянская одежда",
+          "section": "Одежда и роскошь",
+          "price": 600,
+          "resale": 300
+        }
+      },
+      "_id": "Gs3jx0Tey8opUYXO",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.Gs3jx0Tey8opUYXO"
+    },
+    {
+      "name": "Зеркальце",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Смотреть из-за угла, пускать зайчики, подавать сигналы.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Зеркальце",
+          "section": "Одежда и роскошь",
+          "price": 90,
+          "resale": 45
+        }
+      },
+      "_id": "AIrPMVX09Ujwptlq",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.AIrPMVX09Ujwptlq"
+    },
+    {
+      "name": "Линза",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Увеличивает, фокусирует свет.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Линза",
+          "section": "Одежда и роскошь",
+          "price": 120,
+          "resale": 60
+        }
+      },
+      "_id": "yelbsVzg3rBTrmHc",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.yelbsVzg3rBTrmHc"
+    },
+    {
+      "name": "Музыкальный инструмент",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Для игры и выступлений.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Музыкальный инструмент",
+          "section": "Одежда и роскошь",
+          "price": 120,
+          "resale": 60
+        }
+      },
+      "_id": "d8jsuAGCQeDElyYH",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.d8jsuAGCQeDElyYH"
+    },
+    {
+      "name": "Песочные часы",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Отмеряют время.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Песочные часы",
+          "section": "Одежда и роскошь",
+          "price": 180,
+          "resale": 90
+        }
+      },
+      "_id": "iPOpwScCA0RyAf09",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.iPOpwScCA0RyAf09"
+    },
+    {
+      "name": "Подзорная труба",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Разглядывать далёкое.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Подзорная труба",
+          "section": "Одежда и роскошь",
+          "price": 180,
+          "resale": 90
+        }
+      },
+      "_id": "N5U07POTBaOSKBmQ",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.N5U07POTBaOSKBmQ"
+    },
+    {
+      "name": "Карманные часы",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Точное время в кармане.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Карманные часы",
+          "section": "Одежда и роскошь",
+          "price": 180,
+          "resale": 90
+        }
+      },
+      "_id": "UwXbiJMmyXfGShQq",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.UwXbiJMmyXfGShQq"
+    },
+    {
+      "name": "Книга для чтения",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Книга, содержание которой определяет мастер.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Книга для чтения",
+          "section": "Одежда и роскошь",
+          "price": 350,
+          "resale": 175
+        }
+      },
+      "_id": "CClGtYfb5GKu2dvk",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.CClGtYfb5GKu2dvk"
+    },
+    {
+      "name": "Курительная трубка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Неспешный дым, повод для разговора.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Курительная трубка",
+          "section": "Одежда и роскошь",
+          "price": 30,
+          "resale": 15
+        }
+      },
+      "_id": "cKwh0XBEqHsdG30F",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.cKwh0XBEqHsdG30F"
+    },
+    {
+      "name": "Барабан",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Ритм и сигналы, слышно издалека.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Барабан",
+          "section": "Одежда и роскошь",
+          "price": 120,
+          "resale": 60
+        }
+      },
+      "_id": "Kk3KOoMzINrrrNRo",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.Kk3KOoMzINrrrNRo"
+    },
+    {
+      "name": "Волынка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Пронзительный гул на весь квартал.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Волынка",
+          "section": "Одежда и роскошь",
+          "price": 120,
+          "resale": 60
+        }
+      },
+      "_id": "cDt2qC1wcCy5rbnA",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.cDt2qC1wcCy5rbnA"
+    },
+    {
+      "name": "Скрипка",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Тонкая, выразительная мелодия.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Скрипка",
+          "section": "Одежда и роскошь",
+          "price": 120,
+          "resale": 60
+        }
+      },
+      "_id": "JNQmy1aZwhpVHxTE",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.JNQmy1aZwhpVHxTE"
+    },
+    {
+      "name": "Флейта",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Лёгкая, походная музыка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-luxury/Флейта",
+          "section": "Одежда и роскошь",
+          "price": 120,
+          "resale": 60
+        }
+      },
+      "_id": "UC5GTDomzuQbdz5W",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.UC5GTDomzuQbdz5W"
+    },
+    {
+      "name": "Рацион",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>1 рацион на 16 часов бодрствования; съедается на Длительном отдыхе.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-food/Рацион",
+          "section": "Еда",
+          "price": 2
+        }
+      },
+      "_id": "sH3ZtcQKofptdGNx",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!HTB7ILAKJp0lndop.sH3ZtcQKofptdGNx"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "nk-sheet": {
+      "merchant": {
+        "enabled": true,
+        "wallet": 1000,
+        "minSell": 5
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!actors!HTB7ILAKJp0lndop"
+}

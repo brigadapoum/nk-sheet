@@ -1,0 +1,36 @@
+{
+  "name": "Игла",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6</em></p><p>Длинная тонкая игла, колет быстро и почти бесшумно.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Игла",
+      "section": "Оружие",
+      "price": 10,
+      "resale": 5
+    }
+  },
+  "_id": "3Ussaq6wBFA7gXmV",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!3Ussaq6wBFA7gXmV"
+}

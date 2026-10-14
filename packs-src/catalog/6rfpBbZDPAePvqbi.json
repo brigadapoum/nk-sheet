@@ -1,0 +1,38 @@
+{
+  "name": "Алотский проводник",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Всегда знаешь направление к Алотэ. 1 ячейка.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-amulets/Алотский проводник",
+      "section": "Амулеты",
+      "price": 100,
+      "resale": 50,
+      "amulet": true,
+      "noSale": true
+    }
+  },
+  "_id": "6rfpBbZDPAePvqbi",
+  "folder": "DxfzHN0yH5eIC0RM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!6rfpBbZDPAePvqbi"
+}

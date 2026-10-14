@@ -1,0 +1,36 @@
+{
+  "name": "Яд",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Наносится на оружие или подмешивается в еду и питьё.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-alchemy/Яд",
+      "section": "Алхимия",
+      "price": 60,
+      "resale": 30
+    }
+  },
+  "_id": "lmc959YIyDp7cpqm",
+  "folder": "kK3qszzKGyL1zI32",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!lmc959YIyDp7cpqm"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Курительная трубка",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Неспешный дым, повод для разговора.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-luxury/Курительная трубка",
+      "section": "Одежда и роскошь",
+      "price": 30,
+      "resale": 15
+    }
+  },
+  "_id": "h1TqINGbPLgHXbke",
+  "folder": "inEAc2PNB7GjrK1S",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!h1TqINGbPLgHXbke"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Синий свистун",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d10, Громоздкое · Ценность при обмене: 1800 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Длинное ружьё из тёмной керамики с синими жилами под глазурью. Стрелять на ходу нельзя: кто в этот ход двигался, не стреляет. Бьёт свистящим синим лучом, который игнорирует броню. Получивший от него критический урон взрывается синим огнём: d6 урона всем рядом. Свист слышно на весь гекс (бросок столкновений).</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d10",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Синий свистун",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "JA3GxzuDDUztFzoH",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!JA3GxzuDDUztFzoH"
+}

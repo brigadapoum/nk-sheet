@@ -1,0 +1,38 @@
+{
+  "name": "Серп Хлада",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>многоразовый</em></p><p>(оружие, многоразовое). Раненный этим серпом (d6) становится Истощён и мёрзнет до корня, пока не согреется у огня хотя бы час.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-seals/Серп Хлада",
+      "section": "Печати",
+      "price": 500,
+      "resale": 250,
+      "seal": true,
+      "reusable": true
+    }
+  },
+  "_id": "FEl85AgF2aRiTQiG",
+  "folder": "6YlCY6HZCWLAFBiZ",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!FEl85AgF2aRiTQiG"
+}

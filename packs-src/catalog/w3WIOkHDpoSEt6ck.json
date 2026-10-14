@@ -1,0 +1,36 @@
+{
+  "name": "Напильник",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Спиливать замки, прутья и заусенцы.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-tools/Напильник",
+      "section": "Инструменты",
+      "price": 5,
+      "resale": 2
+    }
+  },
+  "_id": "w3WIOkHDpoSEt6ck",
+  "folder": "E1WlO3ItWjixrkQ7",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!w3WIOkHDpoSEt6ck"
+}

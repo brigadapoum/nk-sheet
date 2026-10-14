@@ -1,0 +1,36 @@
+{
+  "name": "Дубина",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>d6</em></p><p>Тяжёлый обломок дерева или кости, бьёт наверняка.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "weapons-common/Дубина",
+      "section": "Оружие",
+      "price": 10,
+      "resale": 5
+    }
+  },
+  "_id": "QKyG1AgNGwQcU5g6",
+  "folder": "R4H5O7KBwGnuHXAO",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!QKyG1AgNGwQcU5g6"
+}

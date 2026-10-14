@@ -1,0 +1,874 @@
+{
+  "_id": "JUktUgvD9iWm02tm",
+  "name": "Торговец Амулетами",
+  "type": "character",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "biography": "",
+    "wealth": {
+      "guilders": 0,
+      "shillings": 0,
+      "pennies": 0
+    }
+  },
+  "prototypeToken": {
+    "name": "Торговец Амулетами",
+    "actorLink": true,
+    "displayName": 20,
+    "disposition": 0
+  },
+  "items": [
+    {
+      "name": "Поедатель",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Покопайся во внутренностях только что убитого врага, насыться и восстанови d6 Силы (Str). Ты узнаешь, о чем думал погибший перед смертью. Поедателей не любят. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Поедатель",
+          "section": "Амулеты",
+          "price": 250,
+          "resale": 125,
+          "amulet": true
+        }
+      },
+      "_id": "1C13br7k8h3mueas",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.1C13br7k8h3mueas"
+    },
+    {
+      "name": "Целительница",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>3 применения</em></p><p>Восстанови 2d6 в любой характеристике себе или союзнику. После трех применений амулет рассыпается прахом. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Целительница",
+          "section": "Амулеты",
+          "price": 250,
+          "resale": 125,
+          "amulet": true,
+          "chargesMax": 3,
+          "charges": 3
+        }
+      },
+      "_id": "TteP3i3dVLSAjBe0",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.TteP3i3dVLSAjBe0"
+    },
+    {
+      "name": "Панцирь духа",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>4 атаки</em></p><p>Можешь принять атаку на панцирь. Панцирь впитает 4 атаки, а потом расколется. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Панцирь духа",
+          "section": "Амулеты",
+          "price": 200,
+          "resale": 100,
+          "amulet": true,
+          "chargesMax": 4,
+          "charges": 4
+        }
+      },
+      "_id": "Isr3BrujwNWfjFuw",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.Isr3BrujwNWfjFuw"
+    },
+    {
+      "name": "Жар Жизни",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>При получении уровня бросай кости HP с преимуществом. Амулет ломается при смерти персонажа. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Жар Жизни",
+          "section": "Амулеты",
+          "price": 300,
+          "resale": 150,
+          "amulet": true
+        }
+      },
+      "_id": "6XfbeAB1KBnLydR1",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.6XfbeAB1KBnLydR1"
+    },
+    {
+      "name": "Мысленож",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Цель должна пройти Спас Ловкости (DEX), чтобы избежать прикосновения, иначе она теряет d6 очков Воли (WIL), а ты получаешь представление об ее актуальных желаниях. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Мысленож",
+          "section": "Амулеты",
+          "price": 350,
+          "resale": 175,
+          "amulet": true
+        }
+      },
+      "_id": "FGIBCBPTOj2rEiF4",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.FGIBCBPTOj2rEiF4"
+    },
+    {
+      "name": "Толмач",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Потратив Фазу (4 часа) на общение с носителем языка, ты научишься понимать этот язык и говорить на нем. Таким образом можно знать лишь 1 дополнительный язык одновременно. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Толмач",
+          "section": "Амулеты",
+          "price": 200,
+          "resale": 100,
+          "amulet": true
+        }
+      },
+      "_id": "P4B0rHlBz6KGTYng",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.P4B0rHlBz6KGTYng"
+    },
+    {
+      "name": "Светлячок",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Ты источаешь блеклый свет на 3 хода (30 мин). Затем каждый ход делай Спас Воли (WIL), чтобы свет не иссяк. Когда свет иссякнет, возжечь его можно будет только после длительного отдыха. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Светлячок",
+          "section": "Амулеты",
+          "price": 150,
+          "resale": 75,
+          "amulet": true
+        }
+      },
+      "_id": "vvXrf1fkohTO71Cx",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.vvXrf1fkohTO71Cx"
+    },
+    {
+      "name": "Тень",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Пройди Спас Ловкости (DEX) и стань невидимым в тени. Не выдавай себя движением. Если кто-то будет тебя искать, нужно будет повторить Спас. При провале тебя увидят. Растворяясь в тени, ты видишь сквозь тьму. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Тень",
+          "section": "Амулеты",
+          "price": 350,
+          "resale": 175,
+          "amulet": true
+        }
+      },
+      "_id": "IGF5ywBYSaqFijtz",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.IGF5ywBYSaqFijtz"
+    },
+    {
+      "name": "Шёпот следов",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Изучив землю в течение получаса, можешь задать один вопрос, на который мастер ответит «да» или «нет», о том, что произошло здесь за последние несколько дней. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Шёпот следов",
+          "section": "Амулеты",
+          "price": 200,
+          "resale": 100,
+          "amulet": true
+        }
+      },
+      "_id": "3cB9QPAwhaHFGDun",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.3cB9QPAwhaHFGDun"
+    },
+    {
+      "name": "Честность",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Задай вопрос с двумя возможными вариантами ответа. Цель должна пройти Спас Воли (WIL) или ответить честно насколько сможет. Если она пройдет проверку, ты потеряешь d6 Воли (Wil). 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Честность",
+          "section": "Амулеты",
+          "price": 300,
+          "resale": 150,
+          "amulet": true
+        }
+      },
+      "_id": "ygiCuPBc3qnI0Fwm",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.ygiCuPBc3qnI0Fwm"
+    },
+    {
+      "name": "Неведомое жало",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>При атаке всегда наносишь +d4 урона. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Неведомое жало",
+          "section": "Амулеты",
+          "price": 450,
+          "resale": 225,
+          "amulet": true
+        }
+      },
+      "_id": "c51RYE1Epygm2d4O",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.c51RYE1Epygm2d4O"
+    },
+    {
+      "name": "Защитник",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>+3 HP пока надет. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Защитник",
+          "section": "Амулеты",
+          "price": 450,
+          "resale": 225,
+          "amulet": true
+        }
+      },
+      "_id": "oHL7yemjIF7pOece",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.oHL7yemjIF7pOece"
+    },
+    {
+      "name": "Ошейник",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>проклят</em></p><p>+1 A. Проклят, нельзя снять. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Ошейник",
+          "section": "Амулеты",
+          "price": 150,
+          "resale": 75,
+          "amulet": true,
+          "noSale": true
+        }
+      },
+      "_id": "AtHz1R4TGvJxTHmY",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.AtHz1R4TGvJxTHmY"
+    },
+    {
+      "name": "Нюх Мрича",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Обоняние сильно обострилось: ты чувствуешь запахи из-под дверей. Перед входом в комнату можешь спросить мастера, есть ли там живые. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Нюх Мрича",
+          "section": "Амулеты",
+          "price": 250,
+          "resale": 125,
+          "amulet": true,
+          "noSale": true
+        }
+      },
+      "_id": "lztu9fNCdhXOezBv",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.lztu9fNCdhXOezBv"
+    },
+    {
+      "name": "Гигант",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>проклят, 2 ячейки</em></p><p>Вызывает постоянный аномальный рост Жука. После каждого Полного отдыха Жук получает постоянные +2 к Силе (STR) и −2 к Ловкости (DEX), а его размер увеличивается в полтора раза. С каждой стадией роста ему нужно вдвое больше рационов. В какой-то момент Жук станет настолько огромным, что не сможет двигаться. Проклят, нельзя снять. 2 ячейки.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Гигант",
+          "section": "Амулеты",
+          "price": 150,
+          "resale": 75,
+          "amulet": true,
+          "amuletSlots": 2,
+          "noSale": true
+        }
+      },
+      "_id": "D0TIUFAiAARqJEAz",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.D0TIUFAiAARqJEAz"
+    },
+    {
+      "name": "Героика",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Ты источаешь героический аромат. Реакция +1, если ты ведёшь контакт. Нельзя носить вместе с Ужасом. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Героика",
+          "section": "Амулеты",
+          "price": 200,
+          "resale": 100,
+          "amulet": true,
+          "noSale": true
+        }
+      },
+      "_id": "SduLvuNlpRWgnlYh",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.SduLvuNlpRWgnlYh"
+    },
+    {
+      "name": "Ужас",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>2 ячейки</em></p><p>Ты внушаешь ужас всем вокруг. Оппоненты бросают мораль с помехой. Нельзя носить вместе с Героикой. 2 ячейки.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Ужас",
+          "section": "Амулеты",
+          "price": 400,
+          "resale": 200,
+          "amulet": true,
+          "amuletSlots": 2,
+          "noSale": true
+        }
+      },
+      "_id": "XnFQV4EbnrbWCEFh",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.XnFQV4EbnrbWCEFh"
+    },
+    {
+      "name": "Колючки",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Когда получаешь урон по Силе (STR), атаковавший тебя получает d4 урона колючками. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Колючки",
+          "section": "Амулеты",
+          "price": 250,
+          "resale": 125,
+          "amulet": true,
+          "noSale": true
+        }
+      },
+      "_id": "r0svbVVK1aXD7vPr",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.r0svbVVK1aXD7vPr"
+    },
+    {
+      "name": "Ярость Павшего",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Пока HP = 0, твои атаки усилены (d12). 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Ярость Павшего",
+          "section": "Амулеты",
+          "price": 300,
+          "resale": 150,
+          "amulet": true,
+          "noSale": true
+        }
+      },
+      "_id": "0ptD00u8wDMyHOtO",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.0ptD00u8wDMyHOtO"
+    },
+    {
+      "name": "Быстрый Фокус",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>3 ячейки</em></p><p>В бою за один раунд делаешь Длительный отдых. Через полчаса (3 Хода) после боя Жук засыпает и должен отдыхать столько Фаз, сколько раз применил амулет; на каждую такую Фазу — одна проверка столкновений. Этот отдых не восстанавливает HP. 3 ячейки.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Быстрый Фокус",
+          "section": "Амулеты",
+          "price": 450,
+          "resale": 225,
+          "amulet": true,
+          "amuletSlots": 3,
+          "noSale": true
+        }
+      },
+      "_id": "tsjklBRXqwFANLhZ",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.tsjklBRXqwFANLhZ"
+    },
+    {
+      "name": "Глубокий Фокус",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p><em>2 ячейки</em></p><p>Передышка восстанавливает 2d6+2 HP. 2 ячейки.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Глубокий Фокус",
+          "section": "Амулеты",
+          "price": 400,
+          "resale": 200,
+          "amulet": true,
+          "amuletSlots": 2,
+          "noSale": true
+        }
+      },
+      "_id": "eDSnMfpBLIr3xC65",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.eDSnMfpBLIr3xC65"
+    },
+    {
+      "name": "Алотский проводник",
+      "type": "equipment",
+      "system": {
+        "subType": "equipment",
+        "description": "<p>Всегда знаешь направление к Алотэ. 1 ячейка.</p>",
+        "armour": 0,
+        "quantity": 1,
+        "damageFormula": null,
+        "equipped": false,
+        "bulky": false,
+        "blast": false,
+        "arcana": false
+      },
+      "flags": {
+        "nk-sheet": {
+          "catalogId": "prices-amulets/Алотский проводник",
+          "section": "Амулеты",
+          "price": 100,
+          "resale": 50,
+          "amulet": true,
+          "noSale": true
+        }
+      },
+      "_id": "71fwduR4E5EEwVTV",
+      "img": "icons/svg/item-bag.svg",
+      "folder": null,
+      "effects": [],
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "13.351",
+        "systemId": "intotheodd",
+        "systemVersion": "3.1.0"
+      },
+      "_key": "!actors.items!JUktUgvD9iWm02tm.71fwduR4E5EEwVTV"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "nk-sheet": {
+      "merchant": {
+        "enabled": true,
+        "wallet": 1000,
+        "minSell": 5
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!actors!JUktUgvD9iWm02tm"
+}

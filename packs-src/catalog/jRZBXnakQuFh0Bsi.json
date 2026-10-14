@@ -1,0 +1,37 @@
+{
+  "name": "Светлячковый фонарь",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>1 ячейка, 2 часа света; перезарядка бесплатно — поймать светомушек вне данжей, 1/4 Фазы</em></p><p>Даёт 2 часа света. Перезарядка бесплатная, но светомушек ловят только вне данжей (1/4 Фазы).</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-light/Светлячковый фонарь",
+      "section": "Свет",
+      "price": 60,
+      "resale": 30,
+      "slots": 1
+    }
+  },
+  "_id": "jRZBXnakQuFh0Bsi",
+  "folder": "D5kWEc6NInEuvLBj",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!jRZBXnakQuFh0Bsi"
+}

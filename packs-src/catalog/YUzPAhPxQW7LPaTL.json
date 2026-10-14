@@ -1,0 +1,37 @@
+{
+  "name": "Шкатулка Мертвецов",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Содержит три крошечных жучьих трупика, подчиняющихся держателю. Слишком малы для серьёзного урона, но проворны и хитры.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-seals/Шкатулка Мертвецов",
+      "section": "Печати",
+      "price": 300,
+      "resale": 150,
+      "seal": true
+    }
+  },
+  "_id": "YUzPAhPxQW7LPaTL",
+  "folder": "6YlCY6HZCWLAFBiZ",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!YUzPAhPxQW7LPaTL"
+}

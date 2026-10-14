@@ -1,0 +1,36 @@
+{
+  "name": "Шип Ограды",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>2d6 · Ценность при обмене: 600 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Короткий шип, выломанный из чёрной решётки, которой Прежние что-то огораживали. На нём насечки-письмо, ржавчина пахнет старой кровью. При критическом уроне цель проходит спасбросок Воли и при провале бежит прочь: на миг она вспоминает, что было за оградой.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "2d6",
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Шип Ограды",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "8s26wnhK0CQ9GVgk",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!8s26wnhK0CQ9GVgk"
+}

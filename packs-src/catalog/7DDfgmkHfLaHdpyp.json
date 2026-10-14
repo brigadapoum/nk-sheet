@@ -1,0 +1,37 @@
+{
+  "name": "Шёпот следов",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Изучив землю в течение получаса, можешь задать один вопрос, на который мастер ответит «да» или «нет», о том, что произошло здесь за последние несколько дней. 1 ячейка.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-amulets/Шёпот следов",
+      "section": "Амулеты",
+      "price": 200,
+      "resale": 100,
+      "amulet": true
+    }
+  },
+  "_id": "7DDfgmkHfLaHdpyp",
+  "folder": "DxfzHN0yH5eIC0RM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!7DDfgmkHfLaHdpyp"
+}

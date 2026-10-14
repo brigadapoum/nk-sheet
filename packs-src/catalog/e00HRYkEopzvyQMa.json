@@ -1,0 +1,39 @@
+{
+  "name": "Целительница",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>3 применения</em></p><p>Восстанови 2d6 в любой характеристике себе или союзнику. После трех применений амулет рассыпается прахом. 1 ячейка.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-amulets/Целительница",
+      "section": "Амулеты",
+      "price": 250,
+      "resale": 125,
+      "amulet": true,
+      "chargesMax": 3,
+      "charges": 3
+    }
+  },
+  "_id": "e00HRYkEopzvyQMa",
+  "folder": "DxfzHN0yH5eIC0RM",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!e00HRYkEopzvyQMa"
+}

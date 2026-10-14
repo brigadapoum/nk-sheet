@@ -1,0 +1,37 @@
+{
+  "name": "Фляга масла для лампы",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p><em>1 ячейка, 4 часа</em></p><p>Одна заправка лампы: 4 часа света.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-light/Фляга масла для лампы",
+      "section": "Свет",
+      "price": 5,
+      "resale": 2,
+      "slots": 1
+    }
+  },
+  "_id": "vNso1kwwQn9UwDqp",
+  "folder": "D5kWEc6NInEuvLBj",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!vNso1kwwQn9UwDqp"
+}

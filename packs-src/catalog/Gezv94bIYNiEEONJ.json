@@ -1,0 +1,37 @@
+{
+  "name": "Кровоточащая печать",
+  "type": "equipment",
+  "system": {
+    "subType": "equipment",
+    "description": "<p>Извергает маслянистую жидкость, похожую на кровь, на вашу область (Близко). Стоящий или движущийся по ней должен пройти спасбросок Ловкости (DEX), иначе падает и не может двигаться. Жидкость безвредно вспыхивает и исчезает при поджоге.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": null,
+    "equipped": false,
+    "bulky": false,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-seals/Кровоточащая печать",
+      "section": "Печати",
+      "price": 120,
+      "resale": 60,
+      "seal": true
+    }
+  },
+  "_id": "Gezv94bIYNiEEONJ",
+  "folder": "6YlCY6HZCWLAFBiZ",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!Gezv94bIYNiEEONJ"
+}

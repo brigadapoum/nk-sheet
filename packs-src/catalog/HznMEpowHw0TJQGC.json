@@ -1,0 +1,36 @@
+{
+  "name": "Жвало Первого богомола",
+  "type": "equipment",
+  "system": {
+    "subType": "weapon",
+    "description": "<p><em>2d8, Громоздкое · Ценность при обмене: 700 я. Вещи Прежних не продаются и не покупаются.</em></p><p>Зазубренная лапа богомола втрое больше нынешних, насаженная на керамическую рукоять. При критическом уроне следующая атака становится усиленной.</p>",
+    "armour": 0,
+    "quantity": 1,
+    "damageFormula": "2d8",
+    "equipped": false,
+    "bulky": true,
+    "blast": false,
+    "arcana": false
+  },
+  "flags": {
+    "nk-sheet": {
+      "catalogId": "prices-artifacts/Жвало Первого богомола",
+      "section": "Артефакты",
+      "artifact": true,
+      "gmOnly": true
+    }
+  },
+  "_id": "HznMEpowHw0TJQGC",
+  "folder": "Gfo2uEPGV8iDslsl",
+  "img": "icons/svg/item-bag.svg",
+  "effects": [],
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "13.351",
+    "systemId": "intotheodd",
+    "systemVersion": "3.1.0"
+  },
+  "_key": "!items!HznMEpowHw0TJQGC"
+}
