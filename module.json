@@ -1,8 +1,8 @@
 {
   "id": "nk-sheet",
-  "title": "Новое королевство — лист Жука",
-  "description": "Доработки листа персонажа Into the Odd под правила кампании «Новое королевство»: передача предметов между листами, ячейки инвентаря, перегруз, громоздкость, карманцы и амулеты.",
-  "version": "0.2.1",
+  "title": "Новое королевство — лист Жука и лавки",
+  "description": "Доработки листа персонажа Into the Odd под правила кампании «Новое королевство»: передача предметов, ячейки инвентаря, перегруз, амулеты, печати и заряды — и лавки торговцев с покупкой, продажей и отменой сделок.",
+  "version": "0.3.0",
   "authors": [
     {
       "name": "brigadapoum"
@@ -33,5 +33,5 @@
   "socket": true,
   "url": "https://github.com/brigadapoum/nk-sheet",
   "manifest": "https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/module.json",
-  "download": "https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/dist/nk-sheet-0.2.1.zip"
+  "download": "https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/dist/nk-sheet-0.3.0.zip"
 }

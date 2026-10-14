@@ -2,176 +2,39 @@
  * Новое королевство — лист Жука (nk-sheet)
  * Модуль для системы Into the Odd 3.1.x на Foundry VTT 13.
  *
- * 1. Передача предметов между листами персонажей перетаскиванием
- *    (перенос, а не копия; чужой лист — через клиент мастера).
- * 2. Ячейки инвентаря по Кодексу: ёмкость = максимальная Сила,
- *    янтарь (поле «пенни») — 1 ячейка за каждые 100,
- *    в лапках и в карманцах ячеек не занимают, надетые амулеты — тоже.
- * 3. Перегруз, громоздкость (>2 → HP 0), карманцы (2 шт., не громоздкие,
- *    не больше 1 ячейки), ячейки амулетов (1 + по одной за уровень).
+ * 1. Передача предметов между листами персонажей перетаскиванием.
+ * 2. Ячейки инвентаря по Кодексу, перегруз, громоздкость, карманцы, ячейки амулетов.
+ * 3. Вид предмета: амулет / печать / артефакт; заряды амулетов; кнопка «Использовать».
+ * 4. Инвентарь: «При себе» наверху, «В мешке» ниже, янтарь отдельной строкой.
+ * 5. Торговцы и лавки — в shop.mjs.
  */
 
-const MOD = "nk-sheet"
-const SYS = "intotheodd"
-const SOCKET = `module.${MOD}`
+import {
+  MOD, SYS, SOCKET, PLACES, POCKETS, BULKY_LIMIT, AMBER_PER_SLOT,
+  esc, flag, numFlag, isEquipment, isAmulet, isSeal, isArtifact, isReusable, chargesOf, isUsable,
+  qtyOf, slotsOf, packSlotsOf, subTypeOf, placesFor, equippedFor, placeFromEquipped, placeOf, placeCycle, setPlace,
+  isOurCharacter, isMerchant, computeLoad, removeFromItem,
+} from "./common.mjs"
 
-const LEVELS = ["novice", "professional", "expert", "veteran", "master", "beyond"]
-
-const PLACES = {
-  pack: { label: "в мешке", icon: "fa-solid fa-sack" },
-  worn: { label: "надета", icon: "fa-solid fa-shirt" },
-  hands: { label: "в лапках", icon: "fa-solid fa-hand" },
-  pocket: { label: "в карманце", icon: "fa-solid fa-bag-shopping" },
-  neck: { label: "на шее", icon: "fa-solid fa-gem" },
-}
-
-/*
- * Место заменяет системную кнопку «экипировать»:
- *  броня  — «надета» = экипирована (занимает ячейки, считается в Броню);
- *  оружие — «в лапках» или «в карманце» = экипировано (появляется бросок урона);
- *  прочее — экипировка не используется.
- */
-
-const POCKETS = 2
-const BULKY_LIMIT = 2
+import {
+  initShop, handleShopSocket, merchantBlockHTML, bindMerchantBlock, merchantRowTags, shopItemFieldsHTML,
+} from "./shop.mjs"
 
 /* -------------------------------------------- */
-/*  Утилиты                                     */
-/* -------------------------------------------- */
-
-const esc = (s) =>
-  String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c])
-
-function flag(item, key, fallback) {
-  return foundry.utils.getProperty(item, `flags.${MOD}.${key}`) ?? fallback
-}
-
-const isAmulet = (item) => !!flag(item, "amulet", false)
-const qtyOf = (item) => Math.max(Number(item.system?.quantity) || 0, 1)
-const slotsOf = (item) => Math.max(Number(flag(item, "slots", 1)) || 0, 0)
-
-const subTypeOf = (item) => item.system?.subType ?? "equipment"
-
-/** Какие места доступны предмету — в порядке переключения кнопкой */
-function placesFor(subType, amulet) {
-  if (subType === "armour") return ["pack", "worn"]
-  if (amulet) return ["pack", "hands", "pocket", "neck"]
-  return ["pack", "hands", "pocket"]
-}
-
-function equippedFor(subType, place) {
-  if (subType === "armour") return place === "worn"
-  if (subType === "weapon") return place === "hands" || place === "pocket"
-  return false
-}
-
-/** Место по старой экипировке — для вещей, которым место ещё не задавали */
-function placeFromEquipped(subType, equipped, current = "pack") {
-  if (subType === "armour") return equipped ? "worn" : current === "worn" ? "pack" : current
-  if (subType === "weapon") {
-    if (equipped) return current === "hands" || current === "pocket" ? current : "hands"
-    return current === "hands" || current === "pocket" ? "pack" : current
-  }
-  return current
-}
-
-function placeOf(item) {
-  const allowed = placesFor(subTypeOf(item), isAmulet(item))
-  const stored = flag(item, "place", undefined)
-  const p = stored ?? placeFromEquipped(subTypeOf(item), !!item.system?.equipped)
-  return allowed.includes(p) ? p : "pack"
-}
-
-function placeCycle(item) {
-  const order = placesFor(subTypeOf(item), isAmulet(item))
-  const i = order.indexOf(placeOf(item))
-  return order[(i + 1) % order.length]
-}
-
-/** Одно обновление: место + экипировка вместе */
-function setPlace(item, place) {
-  return item.update({ [`flags.${MOD}.place`]: place, "system.equipped": equippedFor(subTypeOf(item), place) })
-}
-
-function isOurCharacter(actor) {
-  return game.system.id === SYS && actor?.documentName === "Actor" && actor.type === "character"
-}
-
-/* -------------------------------------------- */
-/*  Подсчёт нагрузки                            */
-/* -------------------------------------------- */
-
-export function computeLoad(actor) {
-  const sys = actor.system
-  const capacity = Number(sys.abilities?.str?.max) || 0
-  const amber = Number(sys.wealth?.pennies) || 0
-  const amberSlots = Math.floor(amber / 100)
-
-  let packSlots = amberSlots
-  let bulky = 0
-  let pockets = 0
-  let amuletUsed = 0
-  const problems = []
-
-  for (const item of actor.items) {
-    if (item.type !== "equipment") continue
-    const qty = qtyOf(item)
-    const slots = slotsOf(item)
-    const place = placeOf(item)
-    const amulet = isAmulet(item)
-
-    if (item.system.bulky) bulky += qty
-
-    switch (place) {
-      case "neck":
-        amuletUsed += Math.max(Number(flag(item, "amuletSlots", 1)) || 1, 1)
-        break
-      case "hands":
-        break
-      case "pocket":
-        pockets += qty
-        if (item.system.bulky) problems.push(`«${item.name}» громоздкий — в карманец нельзя`)
-        if (slots > 1) problems.push(`«${item.name}» занимает ${slots} яч. — в карманец влезает только вещь на 1 ячейку`)
-        break
-      default:
-        packSlots += (amulet ? Math.min(slots, 1) : slots) * qty
-    }
-  }
-
-  const levelIdx = Math.max(LEVELS.indexOf(sys.level), 0)
-  const amuletCap = levelIdx + 1
-
-  if (pockets > POCKETS) problems.push(`В карманцах ${pockets} вещей, а карманцев всего ${POCKETS}`)
-  if (amuletUsed > amuletCap) problems.push(`Надето амулетов на ${amuletUsed} яч., а ячеек амулетов ${amuletCap}`)
-
-  return {
-    capacity,
-    packSlots,
-    amber,
-    amberSlots,
-    bulky,
-    pockets,
-    amuletUsed,
-    amuletCap,
-    overloaded: packSlots > capacity,
-    tooBulky: bulky > BULKY_LIMIT,
-    problems,
-  }
-}
-
-/* -------------------------------------------- */
-/*  Лист персонажа                              */
+/*  Плашка нагрузки                             */
 /* -------------------------------------------- */
 
 function renderLoadBar(actor) {
   const L = computeLoad(actor)
-  const chip = (cls, icon, label, value, tip) =>
-    `<span class="nk-chip ${cls}" data-tooltip="${esc(tip)}"><i class="${icon}"></i> ${label} <b>${value}</b></span>`
+  const chip = (cls, icon, label, value, tip, extra = "") =>
+    `<span class="nk-chip ${cls}" data-tooltip="${esc(tip)}"><i class="${icon}"></i> ${label} <b>${value}</b>${extra}</span>`
 
   const chips = [
     chip(L.overloaded ? "nk-bad" : "", "fa-solid fa-sack", "Ячейки", `${L.packSlots}/${L.capacity}`,
       `Ёмкость = максимальная Сила. Занято вещами в мешке${L.amberSlots ? ` и янтарём (${L.amberSlots})` : ""}.`),
-    chip("", "fa-solid fa-coins", "Янтарь", `${L.amber}`, `Каждые 100 янтаря — 1 ячейка. Сейчас: ${L.amberSlots} яч.`),
+    chip("", "fa-solid fa-coins", "Янтарь", `${L.amber}`,
+      `Каждые полные ${AMBER_PER_SLOT} янтаря — 1 ячейка. Сейчас: ${L.amberSlots} яч.`,
+      L.amberSlots ? ` <span class="nk-slot">${L.amberSlots} яч.</span>` : ""),
     chip(L.tooBulky ? "nk-bad" : "", "fa-solid fa-weight-hanging", "Громоздкие", `${L.bulky}/${BULKY_LIMIT}`,
       "Больше 2 громоздких — HP падает до 0 до Длительного отдыха."),
     chip(L.pockets > POCKETS ? "nk-bad" : "", "fa-solid fa-bag-shopping", "Карманцы", `${L.pockets}/${POCKETS}`,
@@ -205,49 +68,134 @@ function relabelWealth(element) {
   if (legend) legend.textContent = "Янтарь и опыт"
 }
 
+/* -------------------------------------------- */
+/*  Строки инвентаря                            */
+/* -------------------------------------------- */
+
+const KINDS = [
+  { test: isAmulet, cls: "amulet", label: "амулет" },
+  { test: isSeal, cls: "seal", label: "печать" },
+  { test: isArtifact, cls: "artifact", label: "артефакт" },
+]
+
+function rowTags(item, merchant) {
+  const place = placeOf(item)
+  const tags = []
+  for (const k of KINDS) {
+    if (k.test(item)) tags.push(`<span class="item-info nk-tag nk-kind nk-kind-${k.cls}">${k.label}</span>`)
+  }
+  if (isSeal(item) && isReusable(item)) tags.push(`<span class="item-info nk-tag nk-muted">многоразовая</span>`)
+  const ch = chargesOf(item)
+  if (ch) tags.push(`<span class="item-info nk-tag nk-muted ${ch.value ? "" : "nk-empty"}">заряды ${ch.value}/${ch.max}</span>`)
+
+  if (merchant) {
+    tags.push(...merchantRowTags(item))
+    return tags.join("")
+  }
+
+  if (place !== "pack") {
+    tags.push(`<span class="item-info nk-tag nk-tag-place">${PLACES[place].label}</span>`)
+  }
+  if (place === "pack" || place === "worn") {
+    tags.push(`<span class="item-info nk-tag nk-slot" data-tooltip="Занимает ячеек инвентаря">${packSlotsOf(item)} яч.</span>`)
+  }
+  return tags.join("")
+}
+
+function groupHead(label, right) {
+  return `<div class="nk-group-head"><span>${label}</span><span>${right}</span></div>`
+}
+
+/** «При себе» наверху, «В мешке» ниже, янтарь — первой строкой мешка */
+function groupRows(actor, list) {
+  list.querySelectorAll(":scope > .nk-group-head, :scope > .nk-amber-row").forEach((el) => el.remove())
+  const rows = [...list.querySelectorAll(":scope > .item[data-item-id]")]
+  const carried = []
+  const bag = []
+  const other = []
+  for (const row of rows) {
+    const item = actor.items.get(row.dataset.itemId)
+    if (!item || !isEquipment(item)) other.push(row)
+    else if (placeOf(item) === "pack") bag.push(row)
+    else carried.push(row)
+  }
+
+  const L = computeLoad(actor)
+  const wornSlots = actor.items
+    .filter((i) => isEquipment(i) && placeOf(i) === "worn")
+    .reduce((s, i) => s + packSlotsOf(i), 0)
+  const bagSlots = L.packSlots - wornSlots
+
+  const frag = document.createDocumentFragment()
+  if (carried.length) {
+    frag.append(htmlToEl(groupHead("При себе", wornSlots ? `${wornSlots} яч. — надетая броня` : "0 яч.")))
+    carried.forEach((r) => frag.append(r))
+  }
+  frag.append(htmlToEl(groupHead("В мешке", `${bagSlots} яч.`)))
+  if (L.amber > 0) {
+    frag.append(htmlToEl(`<div class="nk-amber-row" data-tooltip="Каждые полные ${AMBER_PER_SLOT} янтаря — 1 ячейка">
+      <span>Янтарь ${L.amber}</span><span class="nk-slot ${L.amberSlots ? "" : "nk-zero"}">${L.amberSlots} яч.</span></div>`))
+  }
+  bag.forEach((r) => frag.append(r))
+  other.forEach((r) => frag.append(r))
+  list.append(frag)
+}
+
+function htmlToEl(html) {
+  const t = document.createElement("template")
+  t.innerHTML = html.trim()
+  return t.content.firstElementChild
+}
+
+/* -------------------------------------------- */
+/*  Лист персонажа                              */
+/* -------------------------------------------- */
+
 function decorateCharacterSheet(app, element) {
   const actor = app.document
   const editable = app.isEditable
+  const merchant = isMerchant(actor)
   const equippedLabel = game.i18n.localize("INTOTHEODD.Equipment.FIELDS.equipped.label")
 
   relabelWealth(element)
 
-  // Плашка нагрузки над инвентарём
   const tab = element.querySelector(".tab.character-inventory")
   if (tab) {
-    tab.querySelector(":scope > .nk-load")?.remove()
-    tab.insertAdjacentHTML("afterbegin", renderLoadBar(actor))
+    tab.querySelectorAll(":scope > .nk-load, :scope > .nk-merchant, :scope > .nk-merchant-toggle").forEach((el) => el.remove())
+    if (merchant) {
+      if (game.user.isGM) {
+        tab.insertAdjacentHTML("afterbegin", merchantBlockHTML(actor))
+        bindMerchantBlock(tab.querySelector(":scope > .nk-merchant"), actor)
+      }
+    } else {
+      tab.insertAdjacentHTML("afterbegin", renderLoadBar(actor))
+      if (game.user.isGM && editable) {
+        tab.insertAdjacentHTML("beforeend", `<label class="nk-merchant-toggle" data-tooltip="Видит только мастер">
+          <input type="checkbox" name="flags.${MOD}.merchant.enabled"> Сделать торговцем: инвентарь станет ассортиментом лавки</label>`)
+      }
+    }
   }
 
-  // Строки предметов
   for (const row of element.querySelectorAll(".character-items-list .item[data-item-id]")) {
     const item = actor.items.get(row.dataset.itemId)
-    if (!item || item.type !== "equipment") continue
+    if (!item || !isEquipment(item)) continue
 
-    row.querySelectorAll(".nk-tag, .nk-place-btn").forEach((el) => el.remove())
+    row.querySelectorAll(".nk-tag, .nk-place-btn, .nk-use-btn").forEach((el) => el.remove())
 
     // Системная экипировка заменена местом: прячем щит и бирку «Equipped»
     row.querySelectorAll('[data-action="equip"], [data-action="unequip"]').forEach((el) => el.classList.add("nk-hidden"))
     for (const info of row.querySelectorAll("summary .item-info:not(.nk-tag)")) {
       if (info.textContent.trim() === equippedLabel) info.classList.add("nk-hidden")
+      // Системную «Arcana» заменяют наши метки вида
+      if (info.textContent.trim() === game.i18n.localize("INTOTHEODD.Equipment.FIELDS.arcana.label")) info.classList.add("nk-hidden")
     }
 
-    const place = placeOf(item)
-    const slots = slotsOf(item)
-    const tags = []
-    if (place !== "pack") {
-      tags.push(`<span class="item-info nk-tag nk-tag-place"><i class="${PLACES[place].icon}"></i> ${PLACES[place].label}</span>`)
-    }
-    if (place === "pack" || place === "worn") {
-      const shown = (isAmulet(item) ? Math.min(slots, 1) : slots) * qtyOf(item)
-      tags.push(`<span class="item-info nk-tag" data-tooltip="Занимает ячеек инвентаря">${shown} яч.</span>`)
-    }
-    if (isAmulet(item)) tags.push(`<span class="item-info nk-tag">амулет</span>`)
-    row.querySelector("summary > span")?.insertAdjacentHTML("beforeend", tags.join(""))
+    row.querySelector("summary > span")?.insertAdjacentHTML("beforeend", rowTags(item, merchant))
 
-    if (editable) {
-      const next = placeCycle(item)
+    if (editable && !merchant) {
       const controls = row.querySelector(".item-controls")
+      const place = placeOf(item)
+      const next = placeCycle(item)
       controls?.insertAdjacentHTML(
         "afterbegin",
         `<a class="nk-place-btn" data-tooltip="Переложить: ${esc(PLACES[next].label)}"><i class="${PLACES[place].icon}"></i></a>`
@@ -257,6 +205,17 @@ function decorateCharacterSheet(app, element) {
         ev.stopPropagation()
         setPlace(item, next)
       })
+
+      if (isUsable(item)) {
+        const ch = chargesOf(item)
+        const tip = isSeal(item) ? (isReusable(item) ? "Использовать печать" : "Использовать печать (сгорит)") : `Использовать заряд (${ch.value}/${ch.max})`
+        controls?.insertAdjacentHTML("afterbegin", `<a class="nk-use-btn" data-tooltip="${tip}"><i class="fa-solid fa-bolt"></i></a>`)
+        controls?.querySelector(".nk-use-btn")?.addEventListener("click", (ev) => {
+          ev.preventDefault()
+          ev.stopPropagation()
+          useItem(item)
+        })
+      }
     }
 
     // Перетаскивание строки
@@ -273,6 +232,9 @@ function decorateCharacterSheet(app, element) {
       row.addEventListener("dragend", () => row.classList.remove("nk-dragging"))
     }
   }
+
+  const list = element.querySelector(".character-items-list")
+  if (list && !merchant) groupRows(actor, list)
 
   // Приём брошенного предмета — один раз на окно
   if (!element.dataset.nkDrop) {
@@ -297,13 +259,58 @@ function onDropCapture(app, event) {
   // Из папки предметов или компендиума — пусть работает система (копия)
   if (!src || src.parent?.documentName !== "Actor") return
 
-  // Иначе это перенос между Жуками: забираем событие у системы, чтобы она не сделала копию
+  // Иначе это перенос между листами: забираем событие у системы, чтобы она не сделала копию
   event.preventDefault()
   event.stopImmediatePropagation()
 
   const target = app.document
   if (src.parent.uuid === target.uuid) return // свой же лист — ничего не делаем
   transferItem(src, target)
+}
+
+/* -------------------------------------------- */
+/*  Использовать печать / заряд амулета         */
+/* -------------------------------------------- */
+
+async function useItem(item) {
+  const actor = item.parent
+  if (!actor?.isOwner) return
+  const desc = await foundry.applications.ux.TextEditor.implementation.enrichHTML(item.system.description ?? "", {
+    relativeTo: item,
+  })
+
+  let title
+  let footer
+  let kind
+  if (isSeal(item)) {
+    kind = "seal"
+    title = `Использует ${esc(item.name)}`
+    if (isReusable(item)) footer = "Печать многоразовая — остаётся у владельца"
+    else {
+      footer = qtyOf(item) > 1 ? `Печать сгорела, осталось ${qtyOf(item) - 1}` : "Печать сгорела"
+      await removeFromItem(item, 1)
+    }
+  } else {
+    const ch = chargesOf(item)
+    if (!ch) return
+    if (ch.value < 1) {
+      ui.notifications.warn(`У «${item.name}» не осталось зарядов.`)
+      return
+    }
+    kind = "amulet"
+    await item.update({ [`flags.${MOD}.charges`]: ch.value - 1 })
+    title = `Использует ${esc(item.name)}`
+    footer = `Заряды ${ch.value}/${ch.max} → ${ch.value - 1}/${ch.max}`
+  }
+
+  await ChatMessage.create({
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: `<div class="nk-card nk-use nk-use-${kind}">
+      <div class="nk-card-title">${title}</div>
+      ${desc ? `<div class="nk-card-desc">${desc}</div>` : ""}
+      <div class="nk-card-foot">${footer}</div>
+    </div>`,
+  })
 }
 
 /* -------------------------------------------- */
@@ -331,7 +338,7 @@ async function transferItem(src, target) {
     ui.notifications.warn("Отдавать можно только вещи своего персонажа.")
     return
   }
-  if (src.type !== "equipment") return
+  if (!isEquipment(src)) return
 
   const have = qtyOf(src)
   let qty = 1
@@ -358,7 +365,7 @@ async function performTransfer({ srcUuid, targetUuid, qty, userId }) {
   if (!src || !target || !user) return
   const srcActor = src.parent
   if (!srcActor || !srcActor.testUserPermission(user, "OWNER")) return
-  if (!isOurCharacter(target) || src.type !== "equipment") return
+  if (!isOurCharacter(target) || !isEquipment(src)) return
 
   const have = qtyOf(src)
   const n = Math.clamp(Math.floor(Number(qty)) || 1, 1, have)
@@ -366,7 +373,7 @@ async function performTransfer({ srcUuid, targetUuid, qty, userId }) {
 
   // Стопку подливаем к такой же стопке получателя
   const same = target.items.find(
-    (i) => i.type === "equipment" && i.name === src.name && i.system.subType === src.system.subType
+    (i) => isEquipment(i) && i.name === src.name && i.system.subType === src.system.subType
   )
   if (stacked && same) {
     await same.update({ "system.quantity": qtyOf(same) + n })
@@ -399,25 +406,57 @@ async function performTransfer({ srcUuid, targetUuid, qty, userId }) {
 
 function decorateItemSheet(app, element) {
   const item = app.document
-  if (game.system.id !== SYS || item?.type !== "equipment") return
+  if (game.system.id !== SYS || !isEquipment(item)) return
 
   element.querySelector(".nk-item")?.remove()
   const dis = app.isEditable ? "" : "disabled"
   const place = placeOf(item)
   const amulet = isAmulet(item)
+  const seal = isSeal(item)
   const options = placesFor(subTypeOf(item), amulet)
     .map((k) => `<option value="${k}" ${k === place ? "selected" : ""}>${PLACES[k].label}</option>`)
     .join("")
 
-  // Галочку «экипировано» заменяет «Где лежит» — убираем её, чтобы не двоилось
+  // Галочку «экипировано» заменяет «Где лежит», системную «Arcana» — наш «Вид»
   element.querySelector('[name="system.equipped"]')?.closest(".form-group")?.remove()
+  element.querySelector('[name="system.arcana"]')?.closest(".form-group")?.classList.add("nk-hidden")
+
+  const check = (key, on, label, cls) =>
+    `<label class="nk-check nk-kind-${cls}"><input type="checkbox" name="flags.${MOD}.${key}" ${on ? "checked" : ""} ${dis}> ${label}</label>`
+  const num = (key, value, attrs = "") =>
+    `<input type="number" name="flags.${MOD}.${key}" value="${value ?? ""}" ${attrs} ${dis}>`
+
+  const charges = amulet
+    ? `<div class="form-group">
+        <label>Ячеек амулета</label>
+        <div class="form-fields">${num("amuletSlots", flag(item, "amuletSlots", 1), 'min="1" step="1"')}</div>
+        <p class="hint">Надетый амулет не занимает ячеек инвентаря, в мешке — не больше 1.</p>
+      </div>
+      <div class="form-group">
+        <label>Заряды</label>
+        <div class="form-fields nk-pair">
+          ${num("charges", numFlag(item, "charges") ?? numFlag(item, "chargesMax") ?? "", 'min="0" step="1"')}
+          <span>из</span>
+          ${num("chargesMax", numFlag(item, "chargesMax"), 'min="0" step="1" placeholder="нет"')}
+        </div>
+        <p class="hint">Пусто — амулет без зарядов. С зарядами в инвентаре появляется кнопка «Использовать».</p>
+      </div>`
+    : ""
+
+  const reusable = seal
+    ? `<div class="form-group">
+        <label>Многоразовая</label>
+        <div class="form-fields"><input type="checkbox" name="flags.${MOD}.reusable" ${isReusable(item) ? "checked" : ""} ${dis}></div>
+        <p class="hint">Без галочки печать после использования исчезает.</p>
+      </div>`
+    : ""
 
   const html = `<section class="nk-item">
     <fieldset>
       <legend>Новое королевство</legend>
       <div class="form-group">
         <label>Ячейки</label>
-        <div class="form-fields"><input type="number" name="flags.${MOD}.slots" value="${slotsOf(item)}" min="0" step="1" ${dis}></div>
+        <div class="form-fields">${num("slots", slotsOf(item), 'min="0" step="1"')}</div>
         <p class="hint">Сколько ячеек инвентаря занимает одна штука.</p>
       </div>
       <div class="form-group">
@@ -425,15 +464,17 @@ function decorateItemSheet(app, element) {
         <div class="form-fields"><select name="flags.${MOD}.place" ${dis}>${options}</select></div>
       </div>
       <div class="form-group">
-        <label>Амулет</label>
-        <div class="form-fields"><input type="checkbox" name="flags.${MOD}.amulet" ${amulet ? "checked" : ""} ${dis}></div>
+        <label>Вид</label>
+        <div class="form-fields nk-checks">
+          ${check("amulet", amulet, "амулет", "amulet")}
+          ${check("seal", seal, "печать", "seal")}
+          ${check("artifact", isArtifact(item), "артефакт", "artifact")}
+        </div>
       </div>
-      ${amulet ? `<div class="form-group">
-        <label>Ячеек амулета</label>
-        <div class="form-fields"><input type="number" name="flags.${MOD}.amuletSlots" value="${flag(item, "amuletSlots", 1)}" min="1" step="1" ${dis}></div>
-        <p class="hint">Надетый амулет не занимает ячеек инвентаря, в мешке — не больше 1.</p>
-      </div>` : ""}
+      ${reusable}
+      ${charges}
     </fieldset>
+    ${shopItemFieldsHTML(item, dis)}
   </section>`
 
   const anchor = element.querySelector(".item-main") ?? element.querySelector(".window-content > *")
@@ -447,10 +488,14 @@ function decorateItemSheet(app, element) {
 Hooks.once("ready", () => {
   if (game.system.id !== SYS) return
   game.socket.on(SOCKET, (msg) => {
-    if (msg?.action !== "transfer") return
-    if (game.user !== game.users.activeGM) return
-    performTransfer(msg.payload).catch((err) => console.error(`${MOD} | transfer failed`, err))
+    if (msg?.action === "transfer") {
+      if (game.user !== game.users.activeGM) return
+      performTransfer(msg.payload).catch((err) => console.error(`${MOD} | transfer failed`, err))
+      return
+    }
+    handleShopSocket(msg)
   })
+  initShop()
   console.log(`${MOD} | готов`)
 })
 
@@ -465,7 +510,7 @@ Hooks.on("renderActorSheetV2", (app, element) => {
 
 // Держим место и экипировку согласованными, кто бы их ни менял
 Hooks.on("preUpdateItem", (item, changes) => {
-  if (game.system.id !== SYS || item.type !== "equipment") return
+  if (game.system.id !== SYS || !isEquipment(item)) return
   const get = (path) => foundry.utils.getProperty(changes, path)
   const subType = get("system.subType") ?? subTypeOf(item)
   const amulet = get(`flags.${MOD}.amulet`) ?? isAmulet(item)
@@ -482,6 +527,13 @@ Hooks.on("preUpdateItem", (item, changes) => {
     foundry.utils.setProperty(changes, `flags.${MOD}.place`, place)
     foundry.utils.setProperty(changes, "system.equipped", equippedFor(subType, place))
   }
+
+  // Заряды не больше максимума
+  const max = get(`flags.${MOD}.chargesMax`) !== undefined ? Number(get(`flags.${MOD}.chargesMax`)) || 0 : numFlag(item, "chargesMax")
+  const cur = get(`flags.${MOD}.charges`)
+  if (cur !== undefined && cur !== null && max) {
+    foundry.utils.setProperty(changes, `flags.${MOD}.charges`, Math.clamp(Number(cur) || 0, 0, max))
+  }
 })
 
 Hooks.on("renderItemSheetV2", (app, element) => {
@@ -491,3 +543,6 @@ Hooks.on("renderItemSheetV2", (app, element) => {
     console.error(`${MOD} | item sheet`, err)
   }
 })
+
+/** Для проверок вне Foundry */
+export const _internals = { decorateCharacterSheet, decorateItemSheet }

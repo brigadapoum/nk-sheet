@@ -1,4 +1,21 @@
-/* Новое королевство — лист Жука */
+/* Новое королевство — лист Жука и лавки */
+
+:root {
+  --nk-amber-bg: rgba(232, 168, 40, 0.22);
+  --nk-amber-fg: #9a6608;
+  --nk-amulet: #8b6fe0;
+  --nk-seal: #1f9e8f;
+  --nk-artifact: #dd6f37;
+  --nk-bad: #d9534f;
+  --nk-line: rgba(127, 127, 127, 0.3);
+}
+.theme-dark {
+  --nk-amber-fg: #f0c060;
+  --nk-amulet: #b9a6f0;
+  --nk-seal: #6fd0c0;
+  --nk-artifact: #f09a6a;
+  --nk-bad: #ef7a6a;
+}
 
 /* Прокрутка вкладки «Инвентарь» (раньше жила в Custom CSS) */
 .intotheodd.actor.character .window-content {
@@ -11,54 +28,126 @@
   padding-right: 6px;
 }
 
-/* Скрытые поля (шиллинги) */
-.intotheodd.actor.character .nk-hidden {
+/* Скрытые поля (шиллинги, системные «Equipped» и «Arcana») */
+.nk-hidden {
   display: none !important;
 }
 
 /* Плашка нагрузки */
-.intotheodd.actor.character .nk-load {
+.intotheodd .nk-load {
   display: flex;
   flex-direction: column;
   gap: 4px;
   margin: 4px 0 8px;
 }
-.intotheodd.actor.character .nk-chips {
+.nk-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
-.intotheodd.actor.character .nk-chip {
+.nk-chip {
   border: 1px solid currentColor;
   border-radius: 4px;
   padding: 2px 6px;
   opacity: 0.85;
   white-space: nowrap;
 }
-.intotheodd.actor.character .nk-chip.nk-bad {
-  color: #d9534f;
+.nk-chip.nk-bad {
+  color: var(--nk-bad);
   opacity: 1;
   font-weight: bold;
 }
-.intotheodd.actor.character .nk-warn {
-  color: #d9534f;
+.nk-warn,
+.nk-bad {
+  color: var(--nk-bad);
+}
+.intotheodd .nk-warn {
   font-weight: bold;
 }
 
-/* Строки предметов */
-.intotheodd.actor.character .character-items-list .item[draggable="true"] summary {
+/* Ячейки — единственный «свет» на листе */
+.nk-slot {
+  background: var(--nk-amber-bg);
+  color: var(--nk-amber-fg);
+  border-radius: 4px;
+  padding: 0 6px;
+  white-space: nowrap;
+}
+.nk-slot.nk-zero {
+  background: transparent;
+  color: inherit;
+  opacity: 0.6;
+}
+.nk-chip .nk-slot {
+  margin-left: 2px;
+}
+
+/* Бирки в строках */
+.intotheodd .nk-tag {
+  white-space: nowrap;
+}
+.intotheodd .nk-tag-place {
+  font-style: italic;
+  opacity: 0.75;
+}
+.nk-muted {
+  opacity: 0.7;
+}
+.nk-empty {
+  color: var(--nk-bad);
+}
+.nk-kind {
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 0 5px;
+}
+.nk-kind-amulet {
+  color: var(--nk-amulet);
+}
+.nk-kind-seal {
+  color: var(--nk-seal);
+}
+.nk-kind-artifact {
+  color: var(--nk-artifact);
+}
+.nk-tag-bad {
+  color: var(--nk-bad);
+}
+.nk-price {
+  white-space: nowrap;
+}
+
+/* Группы инвентаря */
+.intotheodd .nk-group-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  opacity: 0.75;
+  margin: 10px 0 2px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--nk-line);
+}
+.intotheodd .nk-group-head:first-child {
+  margin-top: 0;
+}
+.intotheodd .nk-amber-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--nk-line);
+  opacity: 0.9;
+}
+
+/* Кнопки в строке */
+.intotheodd .character-items-list .item[draggable="true"] summary {
   cursor: grab;
 }
-.intotheodd.actor.character .character-items-list .item.nk-dragging {
+.intotheodd .character-items-list .item.nk-dragging {
   opacity: 0.4;
 }
-.intotheodd.actor.character .nk-tag {
-  opacity: 0.8;
-}
-.intotheodd.actor.character .nk-tag-place {
-  font-style: italic;
-}
-.intotheodd.actor.character .nk-place-btn {
+.intotheodd .nk-place-btn,
+.intotheodd .nk-use-btn {
   margin-right: 4px;
 }
 
@@ -66,9 +155,286 @@
 .intotheodd.item.equipment .nk-item {
   margin-top: 6px;
 }
+.nk-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.nk-check {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.nk-pair {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nk-pair input[type="number"] {
+  max-width: 80px;
+}
+.nk-shop-fields {
+  margin-top: 6px;
+  border-color: var(--nk-amber-fg);
+}
+.nk-shop-fields legend {
+  color: var(--nk-amber-fg);
+}
+
+/* Блок торговца на листе */
+.intotheodd .nk-merchant {
+  border: 1px solid var(--nk-amber-fg);
+  border-radius: 6px;
+  margin: 4px 0 10px;
+  padding: 8px 12px;
+}
+.intotheodd .nk-merchant legend {
+  color: var(--nk-amber-fg);
+}
+.nk-merchant-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.nk-merchant-status.nk-open {
+  color: var(--nk-amber-fg);
+  font-weight: bold;
+}
+.nk-merchant-head button {
+  flex: 0 0 auto;
+  width: auto;
+}
+.nk-merchant-grid {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 6px 10px;
+  align-items: center;
+}
+.nk-merchant-grid input[type="checkbox"] {
+  justify-self: start;
+}
+.nk-merchant .hint {
+  margin: 8px 0 0;
+  font-size: 0.85em;
+  opacity: 0.75;
+}
+.intotheodd .nk-merchant-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 0.85em;
+  opacity: 0.6;
+}
+
+/* Окно лавки */
+.nk-shop-app .window-content {
+  padding: 10px 14px;
+}
+.nk-shop {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100%;
+}
+.nk-shop-top,
+.nk-shop-modes,
+.nk-row-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.nk-grow {
+  flex: 1 1 auto;
+}
+.nk-buyer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nk-buyer select {
+  width: auto;
+  min-width: 140px;
+}
+.nk-shop-note {
+  font-size: 0.85em;
+  opacity: 0.75;
+  border: 1px dashed var(--nk-line);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.nk-mode {
+  padding: 4px 18px;
+  border: 1px solid var(--nk-line);
+  cursor: pointer;
+}
+.nk-mode:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.nk-mode:nth-child(2) {
+  border-radius: 0 4px 4px 0;
+  margin-left: -9px;
+}
+.nk-mode.active {
+  font-weight: bold;
+  background: rgba(127, 127, 127, 0.18);
+}
+.nk-wallet {
+  font-size: 0.9em;
+}
+.nk-secs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  border-bottom: 1px solid var(--nk-line);
+}
+.nk-sec {
+  padding: 3px 10px;
+  opacity: 0.7;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.nk-sec.active {
+  opacity: 1;
+  border-bottom-color: currentColor;
+}
+.nk-list {
+  display: flex;
+  flex-direction: column;
+}
+.nk-row {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--nk-line);
+}
+.nk-row-name {
+  cursor: pointer;
+}
+.nk-row-main button {
+  flex: 0 0 auto;
+  width: auto;
+  padding: 0 12px;
+  line-height: 26px;
+}
+.nk-row-gm {
+  background: rgba(221, 111, 55, 0.1);
+  border-radius: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.nk-row-off {
+  opacity: 0.55;
+}
+.nk-row-desc {
+  font-size: 0.9em;
+  opacity: 0.85;
+  padding: 6px 0 2px;
+}
+.nk-empty-list {
+  opacity: 0.6;
+  padding: 12px 0;
+}
+
+/* Окошко подтверждения */
+.nk-deal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 300px;
+}
+.nk-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.nk-line input[type="number"] {
+  max-width: 80px;
+}
+.nk-line-warn {
+  color: var(--nk-bad);
+  min-height: 1.2em;
+  font-size: 0.9em;
+}
 
 /* Чат */
-.nk-transfer .nk-chat-warn {
-  color: #d9534f;
+.nk-transfer .nk-chat-warn,
+.nk-card .nk-chat-warn {
+  color: var(--nk-bad);
   font-weight: bold;
+}
+.nk-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nk-card-title {
+  font-weight: bold;
+}
+.nk-card-foot {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+.nk-card-desc {
+  font-size: 0.9em;
+}
+.nk-use-seal .nk-card-foot {
+  color: var(--nk-seal);
+  opacity: 1;
+}
+.nk-use-amulet .nk-card-foot {
+  color: var(--nk-amulet);
+  opacity: 1;
+}
+.nk-card-gm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px dashed var(--nk-line);
+  padding-top: 4px;
+  font-size: 0.85em;
+}
+.nk-card-gm span {
+  opacity: 0.6;
+}
+.nk-card-gm button {
+  width: auto;
+  flex: 0 0 auto;
+  line-height: 22px;
+  padding: 0 10px;
+  color: var(--nk-bad);
+}
+.nk-card-undone {
+  color: var(--nk-bad);
+  font-size: 0.85em;
+}
+.nk-is-undone .nk-card-foot {
+  text-decoration: line-through;
+}
+.nk-shop-card {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.nk-shop-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border: none;
+  border-radius: 4px;
+}
+.nk-shop-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nk-shop-card button {
+  width: auto;
+}
+.nk-shop-card.nk-closed {
+  opacity: 0.75;
 }
