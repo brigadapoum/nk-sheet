@@ -233,12 +233,27 @@
 /* Окно лавки */
 .nk-shop-app .window-content {
   padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
 }
 .nk-shop {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+/* шапка, режимы и разделы стоят на месте — прокручивается только список товаров */
+.nk-shop > * {
+  flex: 0 0 auto;
+}
+.nk-shop > .nk-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 6px;
 }
 .nk-shop-top,
 .nk-shop-modes,

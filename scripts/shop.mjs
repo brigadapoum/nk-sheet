@@ -459,7 +459,15 @@ class ShopApp extends ApplicationV2 {
   }
 
   _replaceHTML(result, content) {
+    // после покупки, продажи или раскрытия описания список не прыгает наверх;
+    // при смене режима или раздела — начинаем сверху
+    const old = content.querySelector(".nk-list")
+    const view = `${this.mode}|${this.section}`
+    const keep = old && this._nkView === view ? old.scrollTop : 0
+    this._nkView = view
     content.innerHTML = result
+    const list = content.querySelector(".nk-list")
+    if (list && keep) list.scrollTop = keep
     content.querySelector('select[name="nk-buyer"]')?.addEventListener("change", (ev) => {
       this.buyerId = ev.target.value
       this.render()
