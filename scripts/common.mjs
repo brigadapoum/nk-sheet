@@ -8,6 +8,39 @@ export const SOCKET = `module.${MOD}`
 
 export const LEVELS = ["novice", "professional", "expert", "veteran", "master", "beyond"]
 
+/** Ступени по Кодексу (раздел 6 «Развитие и уровни») */
+export const LEVEL_NAMES = {
+  novice: "Скиталец",
+  professional: "Следопыт",
+  expert: "Вестник",
+  veteran: "Ветеран",
+  master: "Эмиссар",
+  beyond: "Легенда",
+}
+
+/**
+ * Сколько опыта копить на текущей ступени, чтобы перейти на следующую.
+ * Опыт для каждой ступени копится с нуля, излишек сохраняется.
+ * У Легенды — 200, чтобы отойти от дел.
+ */
+export const XP_TO_NEXT = {
+  novice: 200,
+  professional: 400,
+  expert: 800,
+  veteran: 1600,
+  master: 3200,
+  beyond: 200,
+}
+
+export function xpProgress(actor) {
+  const level = LEVELS.includes(actor.system?.level) ? actor.system.level : "novice"
+  const idx = LEVELS.indexOf(level)
+  const xp = Math.max(Number(actor.system?.wealth?.guilders) || 0, 0)
+  const need = XP_TO_NEXT[level]
+  const next = LEVELS[idx + 1]
+  return { level, xp, need, ready: xp >= need, nextName: next ? LEVEL_NAMES[next] : null }
+}
+
 export const PLACES = {
   pack: { label: "в мешке", icon: "fa-solid fa-sack" },
   worn: { label: "надета", icon: "fa-solid fa-shirt" },

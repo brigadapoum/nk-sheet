@@ -14,6 +14,7 @@ import {
   esc, flag, numFlag, isEquipment, isAmulet, isSeal, isArtifact, isReusable, chargesOf, isUsable,
   qtyOf, slotsOf, packSlotsOf, subTypeOf, placesFor, equippedFor, placeFromEquipped, placeOf, placeCycle, setPlace,
   isOurCharacter, isMerchant, computeLoad, removeFromItem,
+  LEVELS, LEVEL_NAMES, xpProgress,
 } from "./common.mjs"
 
 import {
@@ -66,6 +67,36 @@ function relabelWealth(element) {
   group("shillings")?.classList.add("nk-hidden")
   const legend = element.querySelector(".character-wealth legend")
   if (legend) legend.textContent = "Янтарь и опыт"
+}
+
+/** Рядом с опытом — сколько нужно на текущей ступени: «120 / 200» */
+function addXpTarget(element, actor) {
+  const input = element.querySelector('[name="system.wealth.guilders"]')
+  if (!input) return
+  input.parentElement.querySelectorAll(":scope > .nk-xp-need").forEach((el) => el.remove())
+  if (isMerchant(actor)) return
+
+  const p = xpProgress(actor)
+  let tip
+  if (p.nextName) {
+    tip = p.ready
+      ? `Хватает на ступень «${p.nextName}». Излишек (${p.xp - p.need}) сохраняется — после повышения он и станет опытом.`
+      : `До ступени «${p.nextName}»: ещё ${p.need - p.xp}. На каждой ступени опыт копится с нуля.`
+  } else {
+    tip = p.ready
+      ? "Легенда накопила 200 опыта и может отойти от дел."
+      : `Легенда: ещё ${p.need - p.xp} опыта — и можно отойти от дел.`
+  }
+  input.insertAdjacentHTML(
+    "afterend",
+    `<span class="nk-xp-need ${p.ready ? "nk-xp-ready" : ""}" data-tooltip="${esc(tip)}">/ ${p.need}</span>`
+  )
+}
+
+/** Подпись поля уровня */
+function relabelLevel(element) {
+  const label = element.querySelector('[name="system.level"]')?.closest(".form-group")?.querySelector("label")
+  if (label) label.textContent = "Ступень"
 }
 
 /* -------------------------------------------- */
@@ -158,6 +189,8 @@ function decorateCharacterSheet(app, element) {
   const equippedLabel = game.i18n.localize("INTOTHEODD.Equipment.FIELDS.equipped.label")
 
   relabelWealth(element)
+  relabelLevel(element)
+  addXpTarget(element, actor)
 
   const tab = element.querySelector(".tab.character-inventory")
   if (tab) {
@@ -484,6 +517,14 @@ function decorateItemSheet(app, element) {
 /* -------------------------------------------- */
 /*  Хуки                                        */
 /* -------------------------------------------- */
+
+// Названия ступеней по Кодексу — подменяем перевод системы, чтобы они были везде
+Hooks.once("i18nInit", () => {
+  if (game.system.id !== SYS) return
+  for (const key of LEVELS) {
+    foundry.utils.setProperty(game.i18n.translations, `INTOTHEODD.Level.${key}`, LEVEL_NAMES[key])
+  }
+})
 
 Hooks.once("ready", () => {
   if (game.system.id !== SYS) return

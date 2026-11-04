@@ -33,6 +33,27 @@
   display: none !important;
 }
 
+/* Опыт: «120 / 200» */
+.intotheodd.actor.character .character-wealth .wealth input[name="system.wealth.guilders"] {
+  margin-right: 4px;
+}
+.intotheodd.actor.character .nk-xp-need {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-right: 20px;
+  font-size: 1rem;
+  white-space: nowrap;
+  opacity: 0.75;
+}
+.intotheodd.actor.character .nk-xp-need.nk-xp-ready {
+  opacity: 1;
+  font-weight: bold;
+  color: var(--nk-amber-fg);
+  background: var(--nk-amber-bg);
+  border-radius: 3px;
+  padding: 0 4px;
+}
+
 /* Плашка нагрузки */
 .intotheodd .nk-load {
   display: flex;
