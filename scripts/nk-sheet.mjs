@@ -7,6 +7,7 @@
  * 3. Вид предмета: амулет / печать / артефакт; заряды амулетов; кнопка «Использовать».
  * 4. Инвентарь: «При себе» наверху, «В мешке» ниже, янтарь отдельной строкой.
  * 5. Торговцы и лавки — в shop.mjs.
+ * 6. Стол кампании (сцена-холл с панелями и отрядом экспедиции) — в hall.mjs.
  */
 
 import {
@@ -16,6 +17,8 @@ import {
   isOurCharacter, isMerchant, computeLoad, removeFromItem,
   LEVELS, LEVEL_NAMES, xpProgress,
 } from "./common.mjs"
+
+import { initHall, handleHallSocket } from "./hall.mjs"
 
 import {
   initShop, handleShopSocket, merchantBlockHTML, bindMerchantBlock, merchantRowTags, shopItemFieldsHTML,
@@ -534,9 +537,11 @@ Hooks.once("ready", () => {
       performTransfer(msg.payload).catch((err) => console.error(`${MOD} | transfer failed`, err))
       return
     }
+    if (handleHallSocket(msg)) return
     handleShopSocket(msg)
   })
   initShop()
+  initHall()
   console.log(`${MOD} | готов`)
 })
 
