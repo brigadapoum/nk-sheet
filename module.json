@@ -1,8 +1,8 @@
 {
   "id": "nk-sheet",
   "title": "Новое королевство — лист Жука, лавки и стол кампании",
-  "description": "Доработки листа персонажа Into the Odd под правила кампании «Новое королевство»: передача предметов, ячейки инвентаря, перегруз, амулеты, печати и заряды — лавки торговцев с покупкой, продажей и отменой сделок — и стол кампании: сцена-холл с правителями, жителями, галереей Жуков и сбором отряда в экспедицию.",
-  "version": "0.4.0",
+  "description": "Доработки листа персонажа Into the Odd под правила кампании «Новое королевство»: передача предметов, ячейки инвентаря, перегруз, амулеты, печати и заряды — лавки торговцев с покупкой, продажей и отменой сделок — и стол кампании: окно при входе с правителями, жителями, галереей Жуков и сбором отряда в экспедицию.",
+  "version": "0.4.1",
   "authors": [
     {
       "name": "brigadapoum"
@@ -34,7 +34,7 @@
   "socket": true,
   "url": "https://github.com/brigadapoum/nk-sheet",
   "manifest": "https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/module.json",
-  "download": "https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/dist/nk-sheet-0.4.0.zip",
+  "download": "https://raw.githubusercontent.com/brigadapoum/nk-sheet/main/dist/nk-sheet-0.4.1.zip",
   "packs": [
     {
       "name": "merchants",
