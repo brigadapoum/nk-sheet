@@ -1,70 +1,91 @@
-/* Новое королевство — стол кампании (с 0.4.0) */
+/* Новое королевство — стол кампании (окно, с 0.4.1) */
 @import url("https://fonts.googleapis.com/css2?family=Forum&family=Alegreya:wght@400;500;700&display=swap");
 
-#nk-hall {
-  --nk-h-bg: rgba(9, 13, 20, 0.88);
+.nk-hall-app .window-content {
+  padding: 0;
+  overflow: hidden;
+  background: #070b10;
+}
+#nk-hall-app,
+.nk-hall-app .nk-hall {
+  --nk-h-bg: rgba(9, 13, 20, 0.86);
   --nk-h-card: #0e141d;
   --nk-h-line: rgba(230, 235, 239, 0.3);
   --nk-h-ink: #e6ebef;
   --nk-h-mute: #a7b1ba;
   --nk-h-amber: #e9b65c;
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+}
+.nk-hall-app .nk-hall {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  box-sizing: border-box;
   color: var(--nk-h-ink);
   font-family: Alegreya, Georgia, serif;
+  overflow: hidden;
 }
-#nk-hall button {
+.nk-hall-app .nk-hall button {
   font-family: inherit;
   cursor: pointer;
 }
-#nk-hall .nk-hall-panel,
-#nk-hall .nk-hall-top > * {
-  pointer-events: auto;
-}
-#nk-hall.is-hidden .nk-hall-left,
-#nk-hall.is-hidden .nk-hall-right,
-#nk-hall.is-hidden .nk-hall-title,
-#nk-hall.is-hidden .nk-hall-news {
-  display: none;
-}
-
-/* Шапка: название сцены, вести, кнопки */
-#nk-hall .nk-hall-top {
+.nk-hall-app .nk-hall-bg {
   position: absolute;
-  left: var(--nk-hall-left, 80px);
-  right: var(--nk-hall-right, 320px);
-  top: var(--nk-hall-top, 60px);
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  opacity: 0.55;
   pointer-events: none;
 }
-#nk-hall .nk-hall-title {
+.nk-hall-app .nk-hall > *:not(.nk-hall-bg) {
+  position: relative;
+}
+
+/* Шапка и вести */
+.nk-hall-app .nk-hall-top {
   flex: none;
-  width: 340px;
-  box-sizing: border-box;
-  padding: 8px 16px 10px;
-  background: var(--nk-h-bg);
-  border: 1px solid var(--nk-h-line);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nk-hall-app .nk-hall-title {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  padding: 6px 16px 8px;
+  background: var(--nk-h-bg);
+  border: 1px solid var(--nk-h-line);
 }
-#nk-hall .nk-hall-sub {
+.nk-hall-app .nk-hall-sub {
   font: 400 13px Forum, serif;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--nk-h-mute);
 }
-#nk-hall .nk-hall-name {
-  font: 400 30px/1.05 Forum, serif;
+.nk-hall-app .nk-hall-name {
+  font: 400 32px/1.05 Forum, serif;
   letter-spacing: 0.06em;
 }
-#nk-hall .nk-hall-news {
-  flex: 1;
-  min-width: 0;
+.nk-hall-app .nk-hall-gear {
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: var(--nk-h-bg);
+  border: 1px solid var(--nk-h-line);
+  color: var(--nk-h-ink);
+}
+.nk-hall-app .nk-hall-gear:hover {
+  border-color: var(--nk-h-amber);
+  color: var(--nk-h-amber);
+}
+.nk-hall-app .nk-hall-news {
+  flex: none;
+  height: 36px;
   display: flex;
   align-items: stretch;
   background: var(--nk-h-bg);
@@ -72,7 +93,7 @@
   border-bottom-color: var(--nk-h-amber);
   overflow: hidden;
 }
-#nk-hall .nk-hall-newslabel {
+.nk-hall-app .nk-hall-newslabel {
   flex: none;
   display: flex;
   align-items: center;
@@ -83,13 +104,13 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-#nk-hall .nk-hall-newsclip {
+.nk-hall-app .nk-hall-newsclip {
   flex: 1;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-#nk-hall .nk-hall-newstrack {
+.nk-hall-app .nk-hall-newstrack {
   display: flex;
   gap: 40px;
   white-space: nowrap;
@@ -97,44 +118,51 @@
   font-size: 16px;
   animation: nk-hall-tick 60s linear infinite;
 }
-#nk-hall .nk-hall-dot {
+.nk-hall-app .nk-hall-dot {
   color: var(--nk-h-amber);
 }
 @keyframes nk-hall-tick {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-#nk-hall .nk-hall-tools {
-  flex: none;
-  margin-left: auto;
+
+/* Две колонки */
+.nk-hall-app .nk-hall-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  gap: 12px;
+}
+.nk-hall-app .nk-hall-left {
+  flex: 0 0 380px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nk-h-amber) transparent;
 }
-#nk-hall .nk-hall-tools button {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  background: var(--nk-h-bg);
-  border: 1px solid var(--nk-h-line);
-  color: var(--nk-h-ink);
+.nk-hall-app .nk-hall-right {
+  flex: 1;
+  min-width: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
-#nk-hall .nk-hall-tools button:hover {
-  border-color: var(--nk-h-amber);
-  color: var(--nk-h-amber);
+.nk-hall-app .nk-hall-foot {
+  flex: none;
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  color: var(--nk-h-mute);
 }
 
 /* Общие панели */
-#nk-hall .nk-hall-panel {
+.nk-hall-app .nk-hall-panel {
   background: var(--nk-h-bg);
   border: 1px solid var(--nk-h-line);
   padding: 12px 14px 14px;
   box-sizing: border-box;
 }
-#nk-hall .nk-hall-h {
+.nk-hall-app .nk-hall-h {
   margin: 0 0 10px;
   border: 0;
   font: 400 21px Forum, serif;
@@ -142,45 +170,31 @@
   text-transform: uppercase;
   color: var(--nk-h-ink);
 }
-#nk-hall .nk-hall-noimg {
+.nk-hall-app .nk-hall-noimg {
   display: flex;
   align-items: center;
   justify-content: center;
   background: #151c27;
   color: var(--nk-h-mute);
 }
-#nk-hall .nk-hall-noimg svg {
+.nk-hall-app .nk-hall-noimg svg {
   width: 40%;
   height: 40%;
 }
 
 /* Слева: карточки НИП */
-#nk-hall .nk-hall-left {
-  position: absolute;
-  left: var(--nk-hall-left, 80px);
-  top: calc(var(--nk-hall-top, 60px) + 76px);
-  bottom: var(--nk-hall-bottom-l, 120px);
-  width: 340px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  overflow-y: auto;
-  pointer-events: none;
-  scrollbar-width: thin;
-  scrollbar-color: var(--nk-h-amber) transparent;
-}
-#nk-hall .nk-hall-cards {
+.nk-hall-app .nk-hall-cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
-#nk-hall .nk-hall-card {
+.nk-hall-app .nk-hall-card {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-#nk-hall .nk-hall-cardmain {
+.nk-hall-app .nk-hall-cardmain {
   flex: 1;
   padding: 0;
   margin: 0;
@@ -194,11 +208,11 @@
   align-items: stretch;
   line-height: normal;
 }
-#nk-hall .nk-hall-cardmain:hover {
+.nk-hall-app .nk-hall-cardmain:hover {
   border-color: var(--nk-h-amber);
   box-shadow: none;
 }
-#nk-hall .nk-hall-portrait {
+.nk-hall-app .nk-hall-portrait {
   width: 100%;
   height: 96px;
   object-fit: cover;
@@ -206,22 +220,22 @@
   border: 0;
   display: block;
 }
-#nk-hall .nk-hall-cardname {
+.nk-hall-app .nk-hall-cardname {
   padding: 6px 8px 0;
   font: 400 17px/1.1 Forum, serif;
 }
-#nk-hall .nk-hall-cardrole {
+.nk-hall-app .nk-hall-cardrole {
   padding: 2px 8px 0;
   font-size: 12.5px;
   line-height: 1.25;
   color: var(--nk-h-mute);
 }
-#nk-hall .nk-hall-cardmain::after {
+.nk-hall-app .nk-hall-cardmain::after {
   content: "";
   height: 7px;
 }
 /* Кнопки «Лавка», «Найм» — на одной линии внизу карточек */
-#nk-hall .nk-hall-cardbtn {
+.nk-hall-app .nk-hall-cardbtn {
   flex: none;
   height: 30px;
   margin: 0;
@@ -234,14 +248,14 @@
   letter-spacing: 0.04em;
   line-height: 30px;
 }
-#nk-hall .nk-hall-cardbtn:hover {
+.nk-hall-app .nk-hall-cardbtn:hover {
   background: #f4d08f;
   box-shadow: none;
 }
-#nk-hall .nk-hall-cardbtn-empty {
+.nk-hall-app .nk-hall-cardbtn-empty {
   background: transparent;
 }
-#nk-hall .nk-hall-edit {
+.nk-hall-app .nk-hall-edit {
   position: absolute;
   top: 4px;
   right: 4px;
@@ -256,11 +270,11 @@
   line-height: 24px;
   opacity: 0;
 }
-#nk-hall .nk-hall-card:hover .nk-hall-edit,
-#nk-hall .nk-hall-edit:focus-visible {
+.nk-hall-app .nk-hall-card:hover .nk-hall-edit,
+.nk-hall-app .nk-hall-edit:focus-visible {
   opacity: 1;
 }
-#nk-hall .nk-hall-add {
+.nk-hall-app .nk-hall-add {
   min-height: 40px;
   margin: 0;
   background: transparent;
@@ -270,30 +284,20 @@
 }
 
 /* Справа: галерея Жуков */
-#nk-hall .nk-hall-right {
-  position: absolute;
-  right: var(--nk-hall-right, 320px);
-  top: calc(var(--nk-hall-top, 60px) + 76px);
-  bottom: var(--nk-hall-bottom-r, 120px);
-  width: 360px;
-  display: flex;
-  flex-direction: column;
-  padding-right: 6px;
-}
-#nk-hall .nk-hall-righthead {
+.nk-hall-app .nk-hall-righthead {
   display: flex;
   align-items: baseline;
   gap: 10px;
   padding-right: 8px;
 }
-#nk-hall .nk-hall-righthead .nk-hall-h {
+.nk-hall-app .nk-hall-righthead .nk-hall-h {
   margin-bottom: 10px;
 }
-#nk-hall .nk-hall-count {
+.nk-hall-app .nk-hall-count {
   font-size: 13px;
   color: var(--nk-h-mute);
 }
-#nk-hall .nk-hall-clear {
+.nk-hall-app .nk-hall-clear {
   margin-left: auto;
   width: auto;
   height: 26px;
@@ -306,19 +310,19 @@
   text-transform: uppercase;
   line-height: 24px;
 }
-#nk-hall .nk-hall-gallery {
+.nk-hall-app .nk-hall-gallery {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
   padding-right: 8px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 8px;
   align-content: start;
   scrollbar-width: thin;
   scrollbar-color: var(--nk-h-amber) var(--nk-h-card);
 }
-#nk-hall .nk-hall-bug {
+.nk-hall-app .nk-hall-bug {
   background: var(--nk-h-card);
   border: 1px solid rgba(230, 235, 239, 0.16);
   padding: 6px;
@@ -326,10 +330,10 @@
   flex-direction: column;
   gap: 6px;
 }
-#nk-hall .nk-hall-bug.is-going {
+.nk-hall-app .nk-hall-bug.is-going {
   border-color: var(--nk-h-amber);
 }
-#nk-hall .nk-hall-bugmain {
+.nk-hall-app .nk-hall-bugmain {
   margin: 0;
   padding: 0;
   background: transparent;
@@ -341,37 +345,37 @@
   text-align: left;
   line-height: normal;
 }
-#nk-hall .nk-hall-bugmain:hover {
+.nk-hall-app .nk-hall-bugmain:hover {
   box-shadow: none;
 }
-#nk-hall .nk-hall-bugmain:hover .nk-hall-bugname {
+.nk-hall-app .nk-hall-bugmain:hover .nk-hall-bugname {
   color: var(--nk-h-amber);
 }
-#nk-hall .nk-hall-bugimg {
+.nk-hall-app .nk-hall-bugimg {
   flex: none;
   width: 52px;
   height: 52px;
   object-fit: cover;
   border: 1px solid rgba(230, 235, 239, 0.3);
 }
-#nk-hall .nk-hall-bugtext {
+.nk-hall-app .nk-hall-bugtext {
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-#nk-hall .nk-hall-bugname {
+.nk-hall-app .nk-hall-bugname {
   font: 400 16px/1.1 Forum, serif;
   overflow-wrap: anywhere;
 }
-#nk-hall .nk-hall-bugsub {
+.nk-hall-app .nk-hall-bugsub {
   font-size: 12px;
   color: var(--nk-h-mute);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-#nk-hall .nk-hall-go {
+.nk-hall-app .nk-hall-go {
   height: 32px;
   margin: 0;
   padding: 0;
@@ -384,15 +388,15 @@
   line-height: 30px;
   text-align: center;
 }
-#nk-hall .nk-hall-go.is-going {
+.nk-hall-app .nk-hall-go.is-going {
   background: transparent;
   color: var(--nk-h-amber);
 }
-#nk-hall .nk-hall-go.is-static {
+.nk-hall-app .nk-hall-go.is-static {
   display: block;
   box-sizing: border-box;
 }
-#nk-hall .nk-hall-empty {
+.nk-hall-app .nk-hall-empty {
   grid-column: 1 / -1;
   color: var(--nk-h-mute);
   font-size: 14px;

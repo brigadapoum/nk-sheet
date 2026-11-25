@@ -541,7 +541,11 @@ Hooks.once("ready", () => {
     handleShopSocket(msg)
   })
   initShop()
-  initHall()
+  try {
+    initHall()
+  } catch (err) {
+    console.error(`${MOD} | стол кампании не запустился`, err)
+  }
   console.log(`${MOD} | готов`)
 })
 
